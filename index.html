@@ -3,107 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yates Safety Group — Construction Safety Consulting, EHS Services, OSHA Compliance, Safety Staffing, and Safety Culture Development.">
+    <meta name="description" content="Yates Safety Group — Construction Safety Consulting, EHS Services, OSHA Compliance, and Safety Culture Development. Your cornerstone of safety.">
     <title>Yates Safety Group | Construction Safety Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --navy:       #2c4a7c;
-            --navy-dark:  #1e3460;
-            --navy-light: #3a5a8f;
-            --red:        #a0282d;
-            --red-lt:     #b83338;
-            --charcoal:   #5a5f6a;
-            --white:      #ffffff;
-            --off-white:  #f8f9fb;
-            --text:       #2e3240;
-            --text-mid:   #5a6378;
-            --text-light: #8a93a6;
-            --border:     #e8ecf2;
-            --bg-section: #f4f6f9;
+            --navy:      #1e3264;
+            --navy-mid:  #284080;
+            --navy-lt:   #e8edf6;
+            --crimson:   #be2126;
+            --crimson-lt:#f9eaea;
+            --charcoal:  #3d4147;
+            --slate:     #64707f;
+            --mist:      #f4f6f9;
+            --white:     #ffffff;
+            --border:    #e4e8ef;
+            --text:      #1a1d23;
+            --radius:    10px;
+            --shadow-sm: 0 1px 4px rgba(0,0,0,0.06), 0 2px 12px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 12px 40px rgba(0,0,0,0.06);
         }
 
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; font-size: 16px; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--text);
             background: var(--white);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* ── NAV ── */
+        /* ─────────────────────────────
+           NAV
+        ───────────────────────────── */
         nav {
             position: fixed;
             top: 0; left: 0; right: 0;
-            z-index: 100;
-            background: var(--white);
+            z-index: 200;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
-            box-shadow: 0 1px 12px rgba(0,0,0,0.07);
         }
         .nav-inner {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 32px;
+            height: 72px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 68px;
         }
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             text-decoration: none;
+            flex-shrink: 0;
         }
-        .nav-logo img {
-            height: 44px;
-            width: auto;
-        }
-        .nav-logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.1;
-        }
+        .nav-logo img { height: 46px; width: auto; }
+        .nav-logo-text { line-height: 1.15; }
         .nav-logo-name {
-            font-size: 17px;
+            display: block;
+            font-size: 16px;
             font-weight: 800;
-            color: var(--navy-dark);
-            letter-spacing: 0.3px;
+            color: var(--charcoal);
+            letter-spacing: -0.2px;
         }
-        .nav-logo-sub {
+        .nav-logo-tagline {
+            display: block;
             font-size: 10px;
             font-weight: 500;
-            color: var(--charcoal);
-            letter-spacing: 1.5px;
+            color: var(--crimson);
+            letter-spacing: 1.8px;
             text-transform: uppercase;
         }
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 2px;
             list-style: none;
         }
-        .nav-links a {
-            color: var(--text-mid);
-            text-decoration: none;
+        .nav-links li a {
+            display: block;
+            padding: 8px 16px;
             font-size: 14px;
             font-weight: 600;
-            padding: 8px 14px;
-            border-radius: 6px;
-            transition: color 0.2s, background 0.2s;
-            letter-spacing: 0.2px;
+            color: var(--slate);
+            text-decoration: none;
+            border-radius: 7px;
+            transition: color 0.15s, background 0.15s;
+            letter-spacing: -0.1px;
         }
-        .nav-links a:hover { color: var(--navy-dark); background: var(--off-white); }
-        .nav-links .cta-link a {
-            background: var(--navy-dark);
-            color: white;
-            padding: 9px 18px;
-            border-radius: 6px;
+        .nav-links li a:hover { color: var(--navy); background: var(--navy-lt); }
+        .nav-cta a {
+            background: var(--navy) !important;
+            color: white !important;
+            padding: 9px 20px !important;
+            border-radius: 7px;
+            font-weight: 700 !important;
         }
-        .nav-links .cta-link a:hover { background: var(--navy); }
-
+        .nav-cta a:hover { background: var(--navy-mid) !important; }
         .hamburger {
             display: none;
             flex-direction: column;
@@ -113,487 +118,695 @@
             background: none;
             border: none;
         }
-        .hamburger span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--charcoal);
-            border-radius: 2px;
-            transition: 0.3s;
-        }
+        .hamburger span { display: block; width: 22px; height: 2px; background: var(--charcoal); border-radius: 2px; transition: 0.3s; }
 
-        /* ── HERO ── */
+        /* ─────────────────────────────
+           HERO
+        ───────────────────────────── */
         .hero {
-            margin-top: 68px;
-            background: linear-gradient(150deg, #f0f3f8 0%, #e8edf5 100%);
-            color: var(--text);
-            padding: 100px 24px 90px;
-            text-align: center;
+            margin-top: 72px;
+            background: var(--navy);
+            color: white;
             position: relative;
             overflow: hidden;
-            border-bottom: 1px solid var(--border);
+            padding: 0;
         }
-        .hero::before {
-            content: '';
+        .hero-bg-pattern {
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at 70% 50%, rgba(44,74,124,0.06) 0%, transparent 70%);
+            background-image:
+                radial-gradient(circle at 80% 20%, rgba(190,33,38,0.18) 0%, transparent 45%),
+                radial-gradient(circle at 10% 80%, rgba(255,255,255,0.04) 0%, transparent 40%);
         }
-        .hero-inner { position: relative; max-width: 820px; margin: 0 auto; }
-        .hero-eyebrow {
-            display: inline-block;
-            background: transparent;
-            color: var(--navy);
-            border: 1.5px solid rgba(44,74,124,0.3);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            padding: 6px 18px;
-            border-radius: 20px;
-            margin-bottom: 26px;
+        .hero-grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
         }
+        .hero-inner {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 96px 32px 100px;
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 80px;
+            align-items: center;
+        }
+        .hero-content {}
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 100px;
+            padding: 6px 14px 6px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 28px;
+        }
+        .hero-label-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--crimson); flex-shrink: 0; }
         .hero h1 {
-            font-size: clamp(32px, 5vw, 52px);
+            font-size: clamp(36px, 4.5vw, 58px);
             font-weight: 900;
-            line-height: 1.12;
-            letter-spacing: -1px;
+            line-height: 1.06;
+            letter-spacing: -2px;
             margin-bottom: 22px;
-            color: var(--navy-dark);
-        }
-        .hero h1 span { color: var(--red); }
-        .hero p {
-            font-size: clamp(16px, 2vw, 19px);
-            color: var(--text-mid);
-            max-width: 640px;
-            margin: 0 auto 38px;
-            line-height: 1.65;
-        }
-        .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-        .btn-primary {
-            background: var(--navy-dark);
             color: white;
-            padding: 16px 34px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: background 0.2s, transform 0.15s;
-            display: inline-block;
         }
-        .btn-primary:hover { background: var(--navy); transform: translateY(-1px); }
-        .btn-outline {
-            background: transparent;
-            color: var(--navy-dark);
-            padding: 15px 34px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 700;
-            text-decoration: none;
-            border: 2px solid rgba(44,74,124,0.35);
-            transition: border-color 0.2s, background 0.2s;
-            display: inline-block;
+        .hero h1 em {
+            font-style: normal;
+            color: transparent;
+            -webkit-text-stroke: 1.5px rgba(255,255,255,0.6);
         }
-        .btn-outline:hover { border-color: var(--navy); background: rgba(44,74,124,0.06); }
+        .hero-sub {
+            font-size: 17px;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.7;
+            max-width: 520px;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 14px 28px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            transition: all 0.2s;
+            letter-spacing: -0.1px;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+        .btn-white { background: white; color: var(--navy); }
+        .btn-white:hover { background: #f0f3f8; transform: translateY(-1px); }
+        .btn-ghost { background: rgba(255,255,255,0.1); color: white; border: 1.5px solid rgba(255,255,255,0.25); }
+        .btn-ghost:hover { background: rgba(255,255,255,0.18); }
+        .btn-navy { background: var(--navy); color: white; }
+        .btn-navy:hover { background: var(--navy-mid); transform: translateY(-1px); }
+        .btn-icon { font-size: 17px; line-height: 1; }
 
-        /* ── TRUST BAR ── */
-        .trust-bar {
-            background: var(--off-white);
-            border-bottom: 1px solid var(--border);
-            padding: 20px 24px;
+        .hero-card {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 16px;
+            padding: 32px 28px;
+            backdrop-filter: blur(8px);
         }
-        .trust-inner {
-            max-width: 1100px;
+        .hero-card-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 20px;
+        }
+        .hero-stat {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .hero-stat:last-child { border-bottom: none; padding-bottom: 0; }
+        .hero-stat:first-of-type { padding-top: 0; }
+        .hero-stat-num {
+            font-size: 32px;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+            letter-spacing: -1.5px;
+            min-width: 70px;
+        }
+        .hero-stat-num span { font-size: 18px; color: var(--crimson); font-weight: 800; }
+        .hero-stat-label { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.4; font-weight: 500; }
+
+        /* ─────────────────────────────
+           CREDENTIAL STRIP
+        ───────────────────────────── */
+        .cred-strip {
+            background: var(--mist);
+            border-bottom: 1px solid var(--border);
+            padding: 18px 32px;
+        }
+        .cred-inner {
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 40px;
+            gap: 0;
             flex-wrap: wrap;
         }
-        .trust-item {
+        .cred-item {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--text-mid);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
+            padding: 8px 28px;
+            border-right: 1px solid var(--border);
         }
-        .trust-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--bg-section);
-            border: 1.5px solid var(--border);
+        .cred-item:last-child { border-right: none; }
+        .cred-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--navy-lt);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
         }
-        .trust-icon svg { width: 18px; height: 18px; fill: var(--navy); }
+        .cred-icon svg { width: 16px; height: 16px; fill: var(--navy); }
+        .cred-text {}
+        .cred-label { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.2; }
+        .cred-sub { font-size: 11px; color: var(--slate); font-weight: 500; }
 
-        /* ── SECTIONS ── */
-        section { padding: 80px 24px; }
-        .section-inner { max-width: 1100px; margin: 0 auto; }
-        .section-label {
+        /* ─────────────────────────────
+           SHARED LAYOUT
+        ───────────────────────────── */
+        .section { padding: 96px 32px; }
+        .section-inner { max-width: 1200px; margin: 0 auto; }
+        .section-header { margin-bottom: 56px; }
+        .section-header.centered { text-align: center; }
+        .section-header.centered .section-sub { margin-left: auto; margin-right: auto; }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 3px;
+            font-weight: 700;
             text-transform: uppercase;
-            color: var(--charcoal);
-            margin-bottom: 10px;
+            letter-spacing: 2.5px;
+            color: var(--crimson);
+            margin-bottom: 14px;
+        }
+        .eyebrow::before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--crimson);
+            border-radius: 2px;
+            flex-shrink: 0;
         }
         .section-title {
-            font-size: clamp(26px, 3.5vw, 38px);
+            font-size: clamp(28px, 3.5vw, 42px);
             font-weight: 900;
-            color: var(--navy-dark);
-            letter-spacing: -0.5px;
-            line-height: 1.18;
-            margin-bottom: 14px;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            color: var(--text);
+            margin-bottom: 16px;
         }
         .section-sub {
             font-size: 17px;
-            color: var(--text-mid);
-            max-width: 620px;
-            line-height: 1.65;
-            margin-bottom: 52px;
+            color: var(--slate);
+            line-height: 1.7;
+            max-width: 580px;
+            font-weight: 400;
         }
 
-        /* ── SERVICES ── */
-        #services { background: var(--white); }
+        /* ─────────────────────────────
+           SERVICES
+        ───────────────────────────── */
+        #services { background: white; }
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
         }
-        .service-card {
-            border: 1.5px solid var(--border);
-            border-radius: 14px;
-            padding: 28px 26px;
-            cursor: pointer;
-            transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+        .svc {
             background: white;
+            padding: 32px 28px;
+            cursor: pointer;
+            transition: background 0.15s;
             position: relative;
         }
-        .service-card:hover {
-            border-color: var(--red);
-            box-shadow: 0 8px 28px rgba(26,47,82,0.1);
-            transform: translateY(-2px);
+        .svc::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--navy);
+            transform: scaleX(0);
+            transition: transform 0.2s;
+            transform-origin: left;
         }
-        .service-card.open { border-color: var(--navy); box-shadow: 0 8px 28px rgba(26,47,82,0.12); }
-        .service-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: #eef2f8;
+        .svc:hover { background: var(--mist); }
+        .svc:hover::after { transform: scaleX(1); }
+        .svc.open { background: var(--mist); }
+        .svc.open::after { transform: scaleX(1); }
+        .svc-num {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--crimson);
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+            font-variant-numeric: tabular-nums;
+        }
+        .svc-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--navy-lt);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 16px;
+            transition: background 0.15s;
         }
-        .service-icon svg { width: 24px; height: 24px; }
-        .service-title {
-            font-size: 18px;
+        .svc:hover .svc-icon, .svc.open .svc-icon { background: var(--navy); }
+        .svc-icon svg { width: 22px; height: 22px; fill: var(--navy); transition: fill 0.15s; }
+        .svc:hover .svc-icon svg, .svc.open .svc-icon svg { fill: white; }
+        .svc-title {
+            font-size: 15px;
             font-weight: 800;
-            color: var(--navy-dark);
+            color: var(--text);
+            line-height: 1.3;
             margin-bottom: 8px;
-            padding-right: 28px;
+            padding-right: 20px;
         }
-        .service-teaser {
-            font-size: 14px;
-            color: var(--text-mid);
+        .svc-teaser {
+            font-size: 13px;
+            color: var(--slate);
             line-height: 1.6;
         }
-        .service-toggle {
+        .svc-toggle {
             position: absolute;
-            top: 28px; right: 24px;
-            width: 22px; height: 22px;
-            border-radius: 50%;
-            background: var(--off-white);
-            border: 1.5px solid var(--border);
+            top: 28px; right: 22px;
+            width: 20px; height: 20px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 14px;
-            color: var(--text-mid);
-            transition: transform 0.25s, background 0.2s;
-            flex-shrink: 0;
+            color: var(--slate);
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1;
+            transition: transform 0.25s, color 0.15s;
         }
-        .service-card.open .service-toggle { transform: rotate(45deg); background: var(--red); color: white; border-color: var(--red); }
-        .service-detail {
+        .svc.open .svc-toggle { transform: rotate(45deg); color: var(--navy); }
+        .svc-detail {
             display: none;
             margin-top: 16px;
             padding-top: 16px;
             border-top: 1px solid var(--border);
-            font-size: 14px;
-            color: var(--text-mid);
-            line-height: 1.7;
         }
-        .service-detail ul {
-            list-style: none;
+        .svc-detail p { font-size: 13px; color: var(--slate); line-height: 1.7; margin-bottom: 12px; }
+        .svc-detail ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+        .svc-detail li {
+            font-size: 13px;
+            color: var(--charcoal);
             display: flex;
-            flex-direction: column;
-            gap: 6px;
-            margin-top: 10px;
+            align-items: baseline;
+            gap: 8px;
         }
-        .service-detail li::before {
-            content: '→';
-            color: var(--red);
-            font-weight: 700;
-            margin-right: 8px;
+        .svc-detail li::before {
+            content: '';
+            width: 5px; height: 5px;
+            background: var(--crimson);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 5px;
         }
-        .service-card.open .service-detail { display: block; }
+        .svc.open .svc-detail { display: block; }
 
-        /* ── WHY YSG ── */
-        #why { background: var(--off-white); }
-        .why-grid {
+        /* ─────────────────────────────
+           WHY YSG
+        ───────────────────────────── */
+        #why { background: var(--mist); }
+        .why-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 80px;
             align-items: start;
         }
+        .why-story {}
         .why-story p {
             font-size: 16px;
-            color: var(--text-mid);
-            line-height: 1.8;
-            margin-bottom: 18px;
+            color: var(--slate);
+            line-height: 1.85;
+            margin-bottom: 20px;
         }
-        .why-story p strong { color: var(--navy-dark); }
-        .why-pillars { display: flex; flex-direction: column; gap: 16px; }
+        .why-story strong { color: var(--text); font-weight: 700; }
+        .why-quote {
+            margin: 36px 0;
+            padding: 28px 32px;
+            background: var(--navy);
+            border-radius: 12px;
+            color: white;
+        }
+        .why-quote blockquote {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 22px;
+            font-style: italic;
+            line-height: 1.5;
+            color: white;
+            margin-bottom: 16px;
+        }
+        .why-quote cite {
+            font-size: 13px;
+            font-style: normal;
+            color: rgba(255,255,255,0.55);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .why-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .pillar {
             background: white;
             border-radius: 12px;
-            padding: 22px 22px 22px 20px;
-            border-left: 4px solid var(--red);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            padding: 28px 24px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.2s, transform 0.2s;
         }
+        .pillar:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+        .pillar-icon {
+            width: 42px; height: 42px;
+            background: var(--crimson-lt);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 16px;
+        }
+        .pillar-icon svg { width: 20px; height: 20px; fill: var(--crimson); }
         .pillar-title {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 800;
-            color: var(--navy-dark);
-            margin-bottom: 6px;
+            color: var(--text);
+            margin-bottom: 8px;
+            letter-spacing: -0.2px;
         }
         .pillar p {
-            font-size: 14px;
-            color: var(--text-mid);
-            line-height: 1.6;
+            font-size: 13px;
+            color: var(--slate);
+            line-height: 1.65;
         }
 
-        /* ── RESOURCES ── */
+        /* ─────────────────────────────
+           RESOURCES
+        ───────────────────────────── */
         #resources { background: white; }
         .resources-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
-        .resource-card {
+        .res-card {
+            border: 1px solid var(--border);
             border-radius: 14px;
             overflow: hidden;
-            border: 1.5px solid var(--border);
-            transition: box-shadow 0.2s, transform 0.15s;
-        }
-        .resource-card:hover { box-shadow: 0 8px 28px rgba(26,47,82,0.1); transform: translateY(-2px); }
-        .resource-header {
-            background: var(--bg-section);
-            padding: 26px 24px 22px;
-            color: var(--navy-dark);
-            border-bottom: 1px solid var(--border);
-        }
-        .resource-header svg { width: 32px; height: 32px; fill: var(--navy); margin-bottom: 12px; }
-        .resource-header h3 { font-size: 18px; font-weight: 800; }
-        .resource-body {
-            padding: 20px 24px 24px;
+            transition: box-shadow 0.2s, transform 0.2s;
             background: white;
         }
-        .resource-body p {
-            font-size: 14px;
-            color: var(--text-mid);
-            line-height: 1.65;
-            margin-bottom: 18px;
+        .res-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+        .res-card-top {
+            padding: 36px 28px 28px;
+            border-bottom: 1px solid var(--border);
+            background: var(--mist);
         }
-        .resource-link {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--red);
-            text-decoration: none;
+        .res-card-num {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--navy-lt);
+            letter-spacing: -3px;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        .res-card-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+        .res-card-sub { font-size: 13px; color: var(--slate); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .res-card-body { padding: 24px 28px 28px; }
+        .res-card-body p { font-size: 14px; color: var(--slate); line-height: 1.7; margin-bottom: 20px; }
+        .res-link {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy);
+            text-decoration: none;
+            border-bottom: 1.5px solid var(--navy-lt);
+            padding-bottom: 1px;
+            transition: border-color 0.15s, color 0.15s;
         }
-        .resource-link:hover { color: var(--navy); }
+        .res-link:hover { color: var(--crimson); border-color: var(--crimson); }
 
-        /* ── CONSULTATION FORM ── */
-        #consultation { background: var(--bg-section); border-top: 1px solid var(--border); }
-        #consultation .section-title { color: var(--navy-dark); }
-        #consultation .section-label { color: var(--charcoal); }
-        #consultation .section-sub { color: var(--text-mid); }
-        .consult-grid {
+        /* ─────────────────────────────
+           CTA BAND
+        ───────────────────────────── */
+        .cta-band {
+            background: var(--charcoal);
+            padding: 64px 32px;
+            text-align: center;
+        }
+        .cta-band-inner { max-width: 700px; margin: 0 auto; }
+        .cta-band h2 {
+            font-size: clamp(28px, 3.5vw, 42px);
+            font-weight: 900;
+            color: white;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .cta-band p { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 36px; line-height: 1.6; }
+        .cta-band-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn-crimson { background: var(--crimson); color: white; }
+        .btn-crimson:hover { background: #a01b20; transform: translateY(-1px); }
+
+        /* ─────────────────────────────
+           CONSULTATION FORM
+        ───────────────────────────── */
+        #consultation { background: var(--mist); border-top: 1px solid var(--border); }
+        .consult-layout {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 1fr 520px;
+            gap: 80px;
             align-items: start;
         }
-        .consult-info { color: var(--text-mid); }
-        .consult-info p { font-size: 16px; line-height: 1.75; margin-bottom: 28px; }
-        .consult-detail {
+        .consult-left {}
+        .consult-left p {
+            font-size: 16px;
+            color: var(--slate);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+        .consult-details { display: flex; flex-direction: column; gap: 14px; }
+        .consult-row {
             display: flex;
             align-items: center;
             gap: 14px;
-            margin-bottom: 18px;
             font-size: 15px;
-            color: var(--text);
             font-weight: 600;
+            color: var(--text);
         }
-        .consult-detail svg { width: 20px; height: 20px; fill: var(--navy); flex-shrink: 0; }
-        .consult-form {
+        .consult-row-icon {
+            width: 38px; height: 38px;
+            border-radius: 9px;
             background: white;
-            border-radius: 16px;
-            padding: 36px 32px;
+            border: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-sm);
         }
-        .form-row { margin-bottom: 18px; }
-        .form-row label {
+        .consult-row-icon svg { width: 17px; height: 17px; fill: var(--navy); }
+        .consult-row a { color: var(--navy); text-decoration: none; }
+        .consult-row a:hover { text-decoration: underline; }
+        .consult-badges { display: flex; gap: 10px; margin-top: 32px; flex-wrap: wrap; }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 14px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--charcoal);
+            box-shadow: var(--shadow-sm);
+        }
+        .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--navy); flex-shrink: 0; }
+
+        .consult-form-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px 36px;
+            box-shadow: var(--shadow-md);
+        }
+        .form-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.5px;
+            margin-bottom: 24px;
+        }
+        .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .form-field { margin-bottom: 16px; }
+        .form-field label {
             display: block;
             font-size: 12px;
-            font-weight: 800;
-            color: var(--text-mid);
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: var(--slate);
             margin-bottom: 7px;
         }
-        .form-row input,
-        .form-row select,
-        .form-row textarea {
+        .form-field input,
+        .form-field select,
+        .form-field textarea {
             width: 100%;
-            padding: 13px 15px;
+            padding: 12px 14px;
             border: 1.5px solid var(--border);
-            border-radius: 8px;
+            border-radius: var(--radius);
             font-size: 15px;
             color: var(--text);
-            background: var(--off-white);
+            background: white;
+            font-family: 'Inter', sans-serif;
             outline: none;
-            font-family: inherit;
-            transition: border-color 0.2s;
+            transition: border-color 0.15s, box-shadow 0.15s;
             -webkit-appearance: none;
             appearance: none;
         }
-        .form-row input:focus,
-        .form-row select:focus,
-        .form-row textarea:focus { border-color: var(--navy); background: white; }
-        .form-row textarea { min-height: 100px; resize: vertical; }
-        .form-two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .form-field input:focus,
+        .form-field select:focus,
+        .form-field textarea:focus {
+            border-color: var(--navy);
+            box-shadow: 0 0 0 3px rgba(30,50,100,0.08);
+        }
+        .form-field textarea { min-height: 90px; resize: vertical; }
         .form-submit {
             width: 100%;
-            background: var(--navy-dark);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 16px;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            margin-top: 6px;
-            transition: background 0.2s;
-            font-family: inherit;
-        }
-        .form-submit:hover { background: var(--navy); }
-        .form-note {
-            text-align: center;
-            font-size: 12px;
-            color: var(--text-light);
-            margin-top: 12px;
-        }
-
-        /* ── CERTIFICATIONS ── */
-        .certs-bar {
-            background: var(--off-white);
-            border-top: 1px solid var(--border);
-            padding: 36px 24px;
-        }
-        .certs-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 48px;
-            flex-wrap: wrap;
-        }
-        .cert-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            text-align: center;
-        }
-        .cert-badge {
+            padding: 15px;
             background: var(--navy);
             color: white;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            padding: 8px 18px;
-            border-radius: 6px;
-        }
-        .cert-sub {
-            font-size: 11px;
-            color: var(--text-light);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* ── FOOTER ── */
-        footer {
-            background: #0c1624;
-            color: rgba(255,255,255,0.55);
-            padding: 40px 24px;
-            text-align: center;
-            font-size: 13px;
-        }
-        footer a { color: var(--red); text-decoration: none; }
-        footer strong { color: rgba(255,255,255,0.8); }
-        .footer-email {
-            display: inline-block;
-            margin: 10px 0;
+            border: none;
+            border-radius: var(--radius);
             font-size: 15px;
-            font-weight: 600;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            margin-top: 4px;
+            transition: background 0.15s, transform 0.15s;
+            letter-spacing: -0.1px;
         }
+        .form-submit:hover { background: var(--navy-mid); transform: translateY(-1px); }
+        .form-note { text-align: center; font-size: 12px; color: var(--slate); margin-top: 12px; line-height: 1.5; }
 
-        /* ── MOBILE NAV ── */
-        @media (max-width: 768px) {
+        /* ─────────────────────────────
+           FOOTER
+        ───────────────────────────── */
+        footer {
+            background: var(--text);
+            color: rgba(255,255,255,0.5);
+            padding: 56px 32px 32px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 28px;
+        }
+        .footer-brand {}
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            margin-bottom: 16px;
+        }
+        .footer-logo img { height: 38px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; }
+        .footer-logo-name { font-size: 15px; font-weight: 800; color: white; }
+        .footer-brand p { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.45); }
+        .footer-col h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+        .footer-col ul li a { font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.15s; font-weight: 500; }
+        .footer-col ul li a:hover { color: white; }
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
+        /* ─────────────────────────────
+           MOBILE
+        ───────────────────────────── */
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+            .hero-card { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+            .hero-stat { border-bottom: none; border-right: 1px solid rgba(255,255,255,0.08); padding: 16px; }
+            .hero-stat:nth-child(even) { border-right: none; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-layout { grid-template-columns: 1fr; gap: 48px; }
+            .why-pillars { grid-template-columns: 1fr 1fr; }
+            .resources-grid { grid-template-columns: 1fr; }
+            .consult-layout { grid-template-columns: 1fr; gap: 48px; }
+            .footer-top { grid-template-columns: 1fr; gap: 32px; }
+            .cred-item { border-right: none; border-bottom: 1px solid var(--border); width: 100%; }
+            .cred-item:last-child { border-bottom: none; }
+        }
+        @media (max-width: 640px) {
+            .nav-inner { padding: 0 20px; }
             .hamburger { display: flex; }
             .nav-links {
                 display: none;
                 position: absolute;
-                top: 68px; left: 0; right: 0;
-                background: var(--white);
+                top: 72px; left: 0; right: 0;
+                background: white;
                 border-top: 1px solid var(--border);
-                box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+                box-shadow: 0 12px 32px rgba(0,0,0,0.1);
                 flex-direction: column;
-                padding: 16px;
-                gap: 4px;
+                padding: 12px;
+                gap: 2px;
             }
             .nav-links.open { display: flex; }
-            .nav-links a { display: block; padding: 12px 16px; border-radius: 8px; }
-            .why-grid, .consult-grid { grid-template-columns: 1fr; gap: 36px; }
-            .form-two { grid-template-columns: 1fr; }
-            .hero { padding: 64px 20px 60px; }
-            section { padding: 56px 20px; }
-            .trust-inner { gap: 24px; }
+            .nav-links li a { padding: 12px 16px; }
+            .hero-inner { padding: 64px 20px 72px; }
+            .hero-card { grid-template-columns: 1fr; }
+            .hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+            .services-grid { grid-template-columns: 1fr; }
+            .why-pillars { grid-template-columns: 1fr; }
+            .section { padding: 64px 20px; }
+            .form-grid-2 { grid-template-columns: 1fr; }
+            .consult-form-card { padding: 28px 22px; }
         }
     </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ═══════════════ NAV ═══════════════ -->
 <nav>
     <div class="nav-inner">
         <a href="#" class="nav-logo">
             <img src="logo.png" alt="Yates Safety Group">
             <div class="nav-logo-text">
                 <span class="nav-logo-name">Yates Safety Group</span>
-                <span class="nav-logo-sub">Your Cornerstone of Safety</span>
+                <span class="nav-logo-tagline">Your Cornerstone of Safety</span>
             </div>
         </a>
         <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
@@ -603,72 +816,101 @@
             <li><a href="#services" onclick="closeNav()">Services</a></li>
             <li><a href="#why" onclick="closeNav()">Why YSG</a></li>
             <li><a href="#resources" onclick="closeNav()">Resources</a></li>
-            <li class="cta-link"><a href="#consultation" onclick="closeNav()">Free Consultation</a></li>
+            <li class="nav-cta"><a href="#consultation" onclick="closeNav()">Free Consultation</a></li>
         </ul>
     </div>
 </nav>
 
-<!-- HERO -->
+<!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-grid-overlay"></div>
     <div class="hero-inner">
-        <div class="hero-eyebrow">Your Cornerstone of Safety</div>
-        <h1>Protecting <span>Your People</span> Is the Most Important Job on Any Jobsite</h1>
-        <p>Yates Safety Group partners with contractors, owners, and construction organizations to provide experienced, field-focused safety leadership — built around the people performing the work.</p>
-        <div class="hero-btns">
-            <a href="#consultation" class="btn-primary">Request Free Consultation</a>
-            <a href="#services" class="btn-outline">Explore Services</a>
+        <div class="hero-content">
+            <div class="hero-label">
+                <span class="hero-label-dot"></span>
+                Construction Safety &amp; EHS Services
+            </div>
+            <h1>Protecting <em>Your People</em> Is the Job That Matters Most</h1>
+            <p class="hero-sub">Yates Safety Group partners with contractors, owners, and construction organizations to deliver experienced, field-first safety leadership — built around the people who do the work.</p>
+            <div class="hero-actions">
+                <a href="#consultation" class="btn btn-white">
+                    <span>Request Free Consultation</span>
+                    <span class="btn-icon">→</span>
+                </a>
+                <a href="#services" class="btn btn-ghost">Explore Services</a>
+            </div>
+        </div>
+        <div class="hero-card">
+            <div class="hero-card-title">Why Organizations Trust YSG</div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">22<span>+</span></div>
+                <div class="hero-stat-label">Years of skilled trades &amp; field safety experience</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">8</div>
+                <div class="hero-stat-label">Core service areas across EHS and construction safety</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">1<span>st</span></div>
+                <div class="hero-stat-label">Priority — your people, their safety, every single day</div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-    <div class="trust-inner">
-        <div class="trust-item">
-            <div class="trust-icon">
-                <svg viewBox="0 0 24 24"><path d="M12 2L3 7v10l9 5 9-5V7z"/></svg>
+<!-- ═══════════════ CREDENTIALS ═══════════════ -->
+<div class="cred-strip">
+    <div class="cred-inner">
+        <div class="cred-item">
+            <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="cred-text">
+                <div class="cred-label">WBENC Certified</div>
+                <div class="cred-sub">Women's Business Enterprise</div>
             </div>
-            22 Years Field Experience
         </div>
-        <div class="trust-item">
-            <div class="trust-icon">
-                <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        <div class="cred-item">
+            <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <div class="cred-text">
+                <div class="cred-label">ACI Member</div>
+                <div class="cred-sub">Allied Construction Industries</div>
             </div>
-            WBENC Certified
         </div>
-        <div class="trust-item">
-            <div class="trust-icon">
-                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        <div class="cred-item">
+            <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+            <div class="cred-text">
+                <div class="cred-label">OSHA Compliance</div>
+                <div class="cred-sub">Construction &amp; General Industry</div>
             </div>
-            ACI Member
         </div>
-        <div class="trust-item">
-            <div class="trust-icon">
-                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="cred-item">
+            <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M12 2L3 7v10l9 5 9-5V7z"/></svg></div>
+            <div class="cred-text">
+                <div class="cred-label">Field-First Approach</div>
+                <div class="cred-sub">22 Years Skilled Trades Experience</div>
             </div>
-            OSHA Compliance Experts
         </div>
     </div>
 </div>
 
-<!-- SERVICES -->
-<section id="services">
+<!-- ═══════════════ SERVICES ═══════════════ -->
+<section id="services" class="section">
     <div class="section-inner">
-        <div class="section-label">What We Do</div>
-        <h2 class="section-title">Comprehensive Safety Solutions,<br>Tailored to Your Operation</h2>
-        <p class="section-sub">From supplemental field support to full safety program development, YSG provides flexible, scalable services designed around your specific project and organizational needs.</p>
-
+        <div class="section-header">
+            <div class="eyebrow">What We Do</div>
+            <h2 class="section-title">Comprehensive Safety Services,<br>Tailored to Your Operation</h2>
+            <p class="section-sub">From supplemental field support to full program development, YSG delivers scalable, experienced safety solutions built around your specific needs. Click any service to learn more.</p>
+        </div>
         <div class="services-grid">
 
-            <div class="service-card" onclick="toggleCard(this)">
-                <div class="service-toggle">+</div>
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#1a2f52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-                </div>
-                <div class="service-title">Safety Staffing &amp; Leadership</div>
-                <div class="service-teaser">Scalable onsite safety professionals — from field support to Interim Safety Director.</div>
-                <div class="service-detail">
-                    Whether you need to fill a leadership gap, staff a large or complex project, or supplement your existing team, YSG provides experienced safety professionals ready to integrate seamlessly into your operations.
+            <div class="svc" onclick="toggleSvc(this)">
+                <div class="svc-toggle">+</div>
+                <div class="svc-num">01</div>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+                <div class="svc-title">Safety Staffing &amp; Leadership</div>
+                <div class="svc-teaser">Interim Safety Directors, Project Safety Managers, and qualified field support — scalable to your project.</div>
+                <div class="svc-detail">
+                    <p>Whether you need to fill a leadership gap, staff a complex project, or supplement your existing team, YSG provides experienced safety professionals ready to integrate immediately.</p>
                     <ul>
                         <li>Interim Safety Director &amp; Project Safety Manager</li>
                         <li>Onsite safety representatives &amp; field support</li>
@@ -679,15 +921,14 @@
                 </div>
             </div>
 
-            <div class="service-card" onclick="toggleCard(this)">
-                <div class="service-toggle">+</div>
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#1a2f52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-                </div>
-                <div class="service-title">Safety Audits &amp; Inspections</div>
-                <div class="service-teaser">Identify gaps before they become incidents. Thorough site audits and compliance inspections.</div>
-                <div class="service-detail">
-                    YSG conducts comprehensive field audits and inspections designed to close the gap between your written safety program and actual field execution — before regulators or incidents do it for you.
+            <div class="svc" onclick="toggleSvc(this)">
+                <div class="svc-toggle">+</div>
+                <div class="svc-num">02</div>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+                <div class="svc-title">Safety Audits &amp; Inspections</div>
+                <div class="svc-teaser">Identify gaps before they become incidents. Rigorous site audits, compliance inspections, and written corrective action plans.</div>
+                <div class="svc-detail">
+                    <p>YSG conducts thorough field audits designed to close the gap between your written safety program and actual field execution — before regulators or incidents do it for you.</p>
                     <ul>
                         <li>Site safety audits and walkthroughs</li>
                         <li>OSHA compliance inspections</li>
@@ -698,15 +939,14 @@
                 </div>
             </div>
 
-            <div class="service-card" onclick="toggleCard(this)">
-                <div class="service-toggle">+</div>
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#1a2f52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <div class="service-title">OSHA Compliance &amp; Investigation Support</div>
-                <div class="service-teaser">Expert support through OSHA inspections, citations, and corrective action planning.</div>
-                <div class="service-detail">
-                    When regulatory challenges arise, you need an experienced partner by your side — not after the fact. YSG provides knowledgeable support through every phase of the OSHA process.
+            <div class="svc" onclick="toggleSvc(this)">
+                <div class="svc-toggle">+</div>
+                <div class="svc-num">03</div>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <div class="svc-title">OSHA Compliance &amp; Investigation</div>
+                <div class="svc-teaser">Expert guidance through inspections, citations, corrective action planning, and emergency OSHA response.</div>
+                <div class="svc-detail">
+                    <p>When regulatory challenges arise, you need an experienced partner immediately — not after the fact. YSG provides responsive, knowledgeable support through every phase of the OSHA process.</p>
                     <ul>
                         <li>OSHA inspection and investigation support</li>
                         <li>Citation review and response assistance</li>
@@ -717,39 +957,35 @@
                 </div>
             </div>
 
-            <div class="service-card" onclick="toggleCard(this)">
-                <div class="service-toggle">+</div>
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#1a2f52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
-                </div>
-                <div class="service-title">Risk Assessment &amp; Hazard Analysis</div>
-                <div class="service-teaser">JHA, PTP, and HRA planning for your most critical and high-risk activities.</div>
-                <div class="service-detail">
-                    Proactive hazard analysis is the foundation of a functional safety program. YSG helps your team identify, evaluate, and control risk before work begins — not after.
+            <div class="svc" onclick="toggleSvc(this)">
+                <div class="svc-toggle">+</div>
+                <div class="svc-num">04</div>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                <div class="svc-title">Risk Assessment &amp; Hazard Analysis</div>
+                <div class="svc-teaser">JHA, PTP, and HRA planning for your highest-risk activities — fall protection, LOTO, confined space, crane &amp; rigging.</div>
+                <div class="svc-detail">
+                    <p>Proactive hazard analysis is the foundation of any functional safety program. YSG helps your team identify, evaluate, and control risk before work begins.</p>
                     <ul>
                         <li>Job Hazard Analysis (JHA) development</li>
                         <li>Pre-Task Planning (PTP) programs</li>
                         <li>High-Risk Activity (HRA) planning</li>
                         <li>Fall protection plans and programs</li>
-                        <li>Lockout/Tagout (LOTO), confined space, excavation</li>
-                        <li>Crane, rigging, and lift planning support</li>
+                        <li>LOTO, confined space, excavation, crane &amp; rigging</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="service-card" onclick="toggleCard(this)">
-                <div class="service-toggle">+</div>
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#1a2f52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                </div>
-                <div class="service-title">Safety Training &amp; Program Development</div>
-                <div class="service-teaser">Practical, field-relevant training and fully developed safety programs built to actually work.</div>
-                <div class="service-detail">
-                    Safety programs only work when people understand them and use them. YSG develops training and documentation that meets regulatory requirements and makes sense to the workers in the field.
+            <div class="svc" onclick="toggleSvc(this)">
+                <div class="svc-toggle">+</div>
+                <div class="svc-num">05</div>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                <div class="svc-title">Training &amp; Program Development</div>
+                <div class="svc-teaser">OSHA-compliant training and fully developed safety programs written in plain language that your workforce will actually use.</div>
+                <div class="svc-detail">
+                    <p>Safety programs only work when people understand and use them. YSG builds training and documentation that meets regulatory requirements and reflects how work actually happens in the field.</p>
                     <ul>
                         <li>OSHA-compliant safety training programs</li>
                         <li>Custom safety policies and procedures</li>
-                        <li>Safety program development and improvement</li>
                         <li>Drug free workplace training and policies</li>
                         <li>Toolbox talks and field engagement tools</li>
                         <li>ISO 14001 readiness and evaluation support</li>
@@ -757,15 +993,14 @@
                 </div>
             </div>
 
-            <div class="service-card" onclick="toggleCard(this)">
-                <div class="service-toggle">+</div>
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#1a2f52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-                </div>
-                <div class="service-title">Safety Culture &amp; Leadership Coaching</div>
-                <div class="service-teaser">Bridge the gap between written programs and field reality through coaching, engagement, and accountability.</div>
-                <div class="service-detail">
-                    Compliance alone doesn't build a safe workplace. YSG works directly with your leadership team, supervisors, and field professionals to identify gaps, strengthen accountability, and integrate safety into everyday operations.
+            <div class="svc" onclick="toggleSvc(this)">
+                <div class="svc-toggle">+</div>
+                <div class="svc-num">06</div>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+                <div class="svc-title">Safety Culture &amp; Leadership Coaching</div>
+                <div class="svc-teaser">Bridge the gap between written programs and field reality through coaching, engagement, and accountability at every level.</div>
+                <div class="svc-detail">
+                    <p>Compliance alone doesn't build a safe workplace. YSG works with your leadership, supervisors, and crews to identify gaps, strengthen accountability, and make safety a part of daily operations.</p>
                     <ul>
                         <li>Leadership and supervisor safety coaching</li>
                         <li>Safety culture gap assessment and improvement</li>
@@ -776,15 +1011,14 @@
                 </div>
             </div>
 
-            <div class="service-card" onclick="toggleCard(this)">
-                <div class="service-toggle">+</div>
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#1a2f52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                </div>
-                <div class="service-title">Document Management &amp; Prequalification</div>
-                <div class="service-teaser">Organized, accessible safety documentation and GC prequalification support.</div>
-                <div class="service-detail">
-                    From prequalification packages to ongoing document management, YSG helps organizations stay organized, current, and ready — whether it's 6 AM at an orientation or a surprise OSHA visit.
+            <div class="svc" onclick="toggleSvc(this)">
+                <div class="svc-toggle">+</div>
+                <div class="svc-num">07</div>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+                <div class="svc-title">Document Management &amp; Prequalification</div>
+                <div class="svc-teaser">Organized, accessible safety documentation and GC prequalification support — ready at 6 AM, not 8.</div>
+                <div class="svc-detail">
+                    <p>From prequalification packages to ongoing document management, YSG helps organizations stay organized and ready — whether it's orientation day or an unannounced OSHA visit.</p>
                     <ul>
                         <li>Safety document housing and management</li>
                         <li>General contractor prequalification support</li>
@@ -795,21 +1029,20 @@
                 </div>
             </div>
 
-            <div class="service-card" onclick="toggleCard(this)">
-                <div class="service-toggle">+</div>
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#1a2f52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .93h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                </div>
-                <div class="service-title">Emergency Response &amp; OSHA Call-Out</div>
-                <div class="service-teaser">Rapid, experienced response when an incident or OSHA visit can't wait.</div>
-                <div class="service-detail">
-                    When something goes wrong on your jobsite, the decisions made in the first hours matter most. YSG provides responsive, knowledgeable emergency support when you need it most.
+            <div class="svc" onclick="toggleSvc(this)">
+                <div class="svc-toggle">+</div>
+                <div class="svc-num">08</div>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .93h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+                <div class="svc-title">Emergency Response &amp; OSHA Call-Out</div>
+                <div class="svc-teaser">Rapid, experienced response when an incident or OSHA inspection can't wait for business hours.</div>
+                <div class="svc-detail">
+                    <p>The decisions made in the first hours after an incident matter most. YSG provides responsive, knowledgeable emergency support when you need it — immediately.</p>
                     <ul>
                         <li>Emergency call-out and rapid incident response</li>
                         <li>Onsite OSHA inspection support</li>
                         <li>Incident scene documentation and management</li>
                         <li>Post-incident corrective action planning</li>
-                        <li>Communication and stakeholder support</li>
+                        <li>Stakeholder communication support</li>
                     </ul>
                 </div>
             </div>
@@ -818,130 +1051,161 @@
     </div>
 </section>
 
-<!-- WHY YSG -->
-<section id="why">
+<!-- ═══════════════ WHY YSG ═══════════════ -->
+<section id="why" class="section">
     <div class="section-inner">
-        <div class="section-label">Why Yates Safety Group</div>
-        <h2 class="section-title">Built from the Ground Up,<br>for the People Who Do the Work</h2>
-        <div class="why-grid">
+        <div class="why-layout">
             <div class="why-story">
+                <div class="eyebrow">Why Yates Safety Group</div>
+                <h2 class="section-title">Built from the Trades.<br>Built for the Field.</h2>
                 <p>Yates Safety Group was founded by <strong>Dawn Yates</strong> — a safety professional who came up through the skilled trades. With <strong>22 years of field experience</strong>, Dawn has worked alongside ironworkers, welders, operators, and laborers. She has seen firsthand what happens when safety is treated as a compliance checkbox — and what's possible when it isn't.</p>
-                <p>That experience is the foundation of everything YSG does. Not safety from the office, but safety from the field — practical, real-world, and built around the realities your workforce faces every day.</p>
-                <p>YSG's mission is straightforward: <strong>to become a trusted safety partner</strong> that helps organizations protect their workforce, reduce risk, strengthen operational performance, and build safety systems that actually work in the field — not just on paper.</p>
-                <p>At YSG, we believe effective safety management must be practical, proactive, and collaborative. Our commitment is not to help you meet the minimum. Our commitment is to <strong>Your People</strong> — the ones showing up at 6 AM, doing the real work, and counting on someone to have their back.</p>
+                <p>That experience is the foundation of everything YSG does. Not safety from a desk, but safety from the field — practical, real-world, and built around the realities your workforce faces every single day.</p>
+
+                <div class="why-quote">
+                    <blockquote>"Our commitment is not to help you meet the minimum. Our commitment is to Your People — the ones showing up at 6 AM, doing the real work, and counting on someone to have their back."</blockquote>
+                    <cite>— Dawn Yates, Founder, Yates Safety Group</cite>
+                </div>
+
+                <p>YSG's mission is to become a trusted safety partner that helps organizations protect their workforce, reduce risk, strengthen operational performance, and build safety systems that actually work in the field — not just on paper.</p>
             </div>
-            <div class="why-pillars">
-                <div class="pillar">
-                    <div class="pillar-title">Our Promise to Your People</div>
-                    <p>Every worker deserves to go home the same way they arrived. YSG keeps that promise at the center of every audit, every plan, and every coaching conversation.</p>
+            <div>
+                <div class="section-header" style="margin-bottom:28px;">
+                    <div class="eyebrow">Our Commitment</div>
+                    <h3 class="section-title" style="font-size:clamp(22px,2.5vw,30px);">What Sets YSG Apart</h3>
                 </div>
-                <div class="pillar">
-                    <div class="pillar-title">Field-First Approach</div>
-                    <p>We close the gap between written safety programs and real field execution. Policies matter — but only if they reflect how work actually gets done.</p>
-                </div>
-                <div class="pillar">
-                    <div class="pillar-title">Practical. Proactive. Collaborative.</div>
-                    <p>We don't show up to write reports and leave. YSG works alongside your leadership and crews to build safety that sticks — through accountability, engagement, and trust.</p>
-                </div>
-                <div class="pillar">
-                    <div class="pillar-title">Women-Owned, Industry-Recognized</div>
-                    <p>WBENC certified and a proud member of Allied Construction Industries, YSG brings credibility, community, and a commitment to elevating the industry standard for safety.</p>
+                <div class="why-pillars">
+                    <div class="pillar">
+                        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+                        <div class="pillar-title">Your People First</div>
+                        <p>Every worker deserves to go home the same way they arrived. That promise is at the center of every audit, every plan, every coaching conversation.</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 2L3 7v10l9 5 9-5V7z"/></svg></div>
+                        <div class="pillar-title">Field-First Approach</div>
+                        <p>We close the gap between written safety programs and real field execution. Policies matter — but only if they reflect how work actually gets done.</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                        <div class="pillar-title">Proactive, Not Reactive</div>
+                        <p>We identify risk before incidents do. Through planning, accountability, and field engagement, we help you stay ahead of hazards and regulations.</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+                        <div class="pillar-title">Women-Owned &amp; Industry-Recognized</div>
+                        <p>WBENC certified and an ACI member, YSG brings credibility, community, and a commitment to elevating the standard for safety across the industry.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- RESOURCES -->
-<section id="resources">
+<!-- ═══════════════ RESOURCES ═══════════════ -->
+<section id="resources" class="section" style="background:white;border-top:1px solid var(--border);">
     <div class="section-inner">
-        <div class="section-label">Resource Center</div>
-        <h2 class="section-title">Free Tools &amp; Resources for Your Team</h2>
-        <p class="section-sub">YSG believes safety knowledge should be accessible to everyone — not just those who can afford to pay for it. These resources are free, no strings attached.</p>
-
+        <div class="section-header centered">
+            <div class="eyebrow">Resource Center</div>
+            <h2 class="section-title">Free Tools for Your Team</h2>
+            <p class="section-sub">YSG believes safety knowledge should be accessible to everyone — not just those who can afford to pay for it. These resources are free, no strings attached.</p>
+        </div>
         <div class="resources-grid">
-            <div class="resource-card">
-                <div class="resource-header">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
-                    <h3>Toolbox Talks</h3>
+            <div class="res-card">
+                <div class="res-card-top">
+                    <div class="res-card-num" style="color:#dde4f0;">01</div>
+                    <div class="res-card-title">Toolbox Talks</div>
+                    <div class="res-card-sub">Free Downloads</div>
                 </div>
-                <div class="resource-body">
-                    <p>Free, downloadable toolbox talks covering the most common hazards in construction — ready to use in the field, written in plain language your crew will actually understand.</p>
-                    <a href="#consultation" class="resource-link">Request Access →</a>
-                </div>
-            </div>
-            <div class="resource-card">
-                <div class="resource-header">
-                    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    <h3>Mental Health Resources</h3>
-                </div>
-                <div class="resource-body">
-                    <p>Construction has one of the highest suicide rates of any industry. YSG provides free mental health resources, awareness tools, and support guides specifically for construction professionals and their families.</p>
-                    <a href="#consultation" class="resource-link">Access Resources →</a>
+                <div class="res-card-body">
+                    <p>Ready-to-use toolbox talks covering the most common construction hazards — written in plain language your crew will actually understand and engage with. New topics added regularly.</p>
+                    <a href="#consultation" class="res-link">Request Access <span>→</span></a>
                 </div>
             </div>
-            <div class="resource-card">
-                <div class="resource-header">
-                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-                    <h3>Free Classes &amp; Training</h3>
+            <div class="res-card">
+                <div class="res-card-top">
+                    <div class="res-card-num" style="color:#dde4f0;">02</div>
+                    <div class="res-card-title">Mental Health Resources</div>
+                    <div class="res-card-sub">Construction &amp; Trades</div>
                 </div>
-                <div class="resource-body">
-                    <p>A curated, up-to-date list of free and low-cost safety training opportunities available in your region — OSHA courses, certifications, and more. Updated regularly.</p>
-                    <a href="#consultation" class="resource-link">View Upcoming Classes →</a>
+                <div class="res-card-body">
+                    <p>Construction has one of the highest suicide rates of any industry. YSG provides free mental health awareness tools and support guides specifically for construction professionals and their families.</p>
+                    <a href="#consultation" class="res-link">Access Resources <span>→</span></a>
+                </div>
+            </div>
+            <div class="res-card">
+                <div class="res-card-top">
+                    <div class="res-card-num" style="color:#dde4f0;">03</div>
+                    <div class="res-card-title">Free Classes &amp; Training</div>
+                    <div class="res-card-sub">Regional Listings</div>
+                </div>
+                <div class="res-card-body">
+                    <p>A curated, regularly updated list of free and low-cost safety training opportunities in your region — OSHA courses, certifications, and professional development, all in one place.</p>
+                    <a href="#consultation" class="res-link">View Upcoming Classes <span>→</span></a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CONSULTATION FORM -->
-<section id="consultation">
-    <div class="section-inner">
-        <div class="section-label">Get Started</div>
-        <h2 class="section-title">Request Your Free Consultation</h2>
-        <p class="section-sub">No pressure, no pitch. Just an honest conversation about your safety needs and how YSG can help.</p>
+<!-- ═══════════════ CTA BAND ═══════════════ -->
+<div class="cta-band">
+    <div class="cta-band-inner">
+        <h2>Ready to put safety first?</h2>
+        <p>No pressure, no pitch — just an honest conversation about your needs and how YSG can help protect your people and your operation.</p>
+        <div class="cta-band-actions">
+            <a href="#consultation" class="btn btn-crimson">Request a Free Consultation</a>
+            <a href="mailto:Dawn@yatessafetygroup.com" class="btn btn-ghost">Email Dawn Directly</a>
+        </div>
+    </div>
+</div>
 
-        <div class="consult-grid">
-            <div class="consult-info">
-                <p>Whether you're dealing with an immediate compliance issue, looking to build a stronger safety culture, or just not sure where to start — reach out. Dawn will personally respond to every inquiry.</p>
-                <div class="consult-detail">
-                    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    <a href="mailto:Dawn@yatessafetygroup.com" style="color:var(--navy);text-decoration:none;">Dawn@yatessafetygroup.com</a>
+<!-- ═══════════════ FORM ═══════════════ -->
+<section id="consultation" class="section">
+    <div class="section-inner">
+        <div class="consult-layout">
+            <div class="consult-left">
+                <div class="eyebrow">Get Started</div>
+                <h2 class="section-title">Request Your<br>Free Consultation</h2>
+                <p>Whether you're dealing with a compliance issue, building a safety culture from scratch, or just not sure where to start — reach out. Dawn personally responds to every inquiry, typically within one business day.</p>
+                <div class="consult-details">
+                    <div class="consult-row">
+                        <div class="consult-row-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                        <a href="mailto:Dawn@yatessafetygroup.com">Dawn@yatessafetygroup.com</a>
+                    </div>
                 </div>
-                <div class="consult-detail">
-                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    WBENC Certified &mdash; Women-Owned Business
-                </div>
-                <div class="consult-detail">
-                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
-                    Member, Allied Construction Industries
+                <div class="consult-badges">
+                    <div class="badge"><div class="badge-dot"></div>WBENC Certified</div>
+                    <div class="badge"><div class="badge-dot"></div>ACI Member</div>
+                    <div class="badge"><div class="badge-dot" style="background:var(--crimson)"></div>Women-Owned</div>
                 </div>
             </div>
-            <div class="consult-form">
+            <div class="consult-form-card">
+                <div class="form-title">Tell us about your needs</div>
                 <form onsubmit="handleForm(event)">
-                    <div class="form-two">
-                        <div class="form-row">
+                    <div class="form-grid-2">
+                        <div class="form-field">
                             <label>First Name</label>
                             <input type="text" placeholder="Jane" required>
                         </div>
-                        <div class="form-row">
+                        <div class="form-field">
                             <label>Last Name</label>
                             <input type="text" placeholder="Smith" required>
                         </div>
                     </div>
-                    <div class="form-row">
+                    <div class="form-field">
                         <label>Company</label>
                         <input type="text" placeholder="ABC Construction" required>
                     </div>
-                    <div class="form-row">
-                        <label>Email</label>
-                        <input type="email" placeholder="you@company.com" required>
+                    <div class="form-grid-2">
+                        <div class="form-field">
+                            <label>Email</label>
+                            <input type="email" placeholder="you@company.com" required>
+                        </div>
+                        <div class="form-field">
+                            <label>Phone</label>
+                            <input type="tel" placeholder="(555) 000-0000">
+                        </div>
                     </div>
-                    <div class="form-row">
-                        <label>Phone</label>
-                        <input type="tel" placeholder="(555) 000-0000">
-                    </div>
-                    <div class="form-row">
+                    <div class="form-field">
                         <label>How can YSG help?</label>
                         <select>
                             <option value="">Select a service area...</option>
@@ -956,79 +1220,81 @@
                             <option>Not sure — I'd like to talk it through</option>
                         </select>
                     </div>
-                    <div class="form-row">
+                    <div class="form-field">
                         <label>Tell us more (optional)</label>
-                        <textarea placeholder="Brief description of your needs or situation..."></textarea>
+                        <textarea placeholder="Brief description of your situation or needs..."></textarea>
                     </div>
-                    <button type="submit" class="form-submit">Send My Request</button>
-                    <p class="form-note">Dawn personally reviews every inquiry. Expect a response within one business day.</p>
+                    <button type="submit" class="form-submit">Send My Request &rarr;</button>
+                    <p class="form-note">Dawn personally reviews every inquiry.<br>Expect a response within one business day.</p>
                 </form>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CERTS -->
-<div class="certs-bar">
-    <div class="certs-inner">
-        <div class="cert-item">
-            <div class="cert-badge">WBENC Certified</div>
-            <div class="cert-sub">Women's Business Enterprise</div>
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="#" class="footer-logo">
+                    <img src="logo.png" alt="Yates Safety Group">
+                    <span class="footer-logo-name">Yates Safety Group</span>
+                </a>
+                <p>Your cornerstone of safety. Field-focused, people-first construction safety consulting and EHS services.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Safety Staffing &amp; Leadership</a></li>
+                    <li><a href="#services">Audits &amp; Inspections</a></li>
+                    <li><a href="#services">OSHA Compliance</a></li>
+                    <li><a href="#services">Risk Assessment</a></li>
+                    <li><a href="#services">Training &amp; Programs</a></li>
+                    <li><a href="#services">Safety Culture Coaching</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#why">Why YSG</a></li>
+                    <li><a href="#resources">Resource Center</a></li>
+                    <li><a href="#consultation">Free Consultation</a></li>
+                    <li><a href="mailto:Dawn@yatessafetygroup.com">Contact Dawn</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="cert-item">
-            <div class="cert-badge">ACI Member</div>
-            <div class="cert-sub">Allied Construction Industries</div>
-        </div>
-        <div class="cert-item">
-            <div class="cert-badge">OSHA Compliance</div>
-            <div class="cert-sub">Construction &amp; General Industry</div>
-        </div>
-        <div class="cert-item">
-            <div class="cert-badge">22 Years Experience</div>
-            <div class="cert-sub">Skilled Trades &amp; Construction Safety</div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Yates Safety Group. All rights reserved.</span>
+            <span>WBENC Certified &nbsp;&bull;&nbsp; Allied Construction Industries Member</span>
         </div>
     </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-    <p><strong>Yates Safety Group</strong></p>
-    <a href="mailto:Dawn@yatessafetygroup.com" class="footer-email">Dawn@yatessafetygroup.com</a>
-    <p style="margin-top:14px;">&copy; 2026 Yates Safety Group. All rights reserved.</p>
-    <p style="margin-top:6px;">WBENC Certified &nbsp;&bull;&nbsp; Allied Construction Industries Member</p>
 </footer>
 
 <script>
-function toggleCard(card) {
-    const wasOpen = card.classList.contains('open');
-    document.querySelectorAll('.service-card.open').forEach(c => c.classList.remove('open'));
-    if (!wasOpen) card.classList.add('open');
+function toggleSvc(el) {
+    const wasOpen = el.classList.contains('open');
+    document.querySelectorAll('.svc.open').forEach(s => s.classList.remove('open'));
+    if (!wasOpen) {
+        el.classList.add('open');
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+    }
 }
-
-function toggleNav() {
-    document.getElementById('navLinks').classList.toggle('open');
-}
-function closeNav() {
-    document.getElementById('navLinks').classList.remove('open');
-}
-
+function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+function closeNav() { document.getElementById('navLinks').classList.remove('open'); }
 function handleForm(e) {
     e.preventDefault();
     const btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Request Sent!';
-    btn.style.background = '#2e7d52';
+    btn.textContent = '✓ Request Sent — Dawn will be in touch shortly';
+    btn.style.background = '#2d6a4f';
     btn.disabled = true;
     e.target.reset();
     setTimeout(() => {
-        btn.textContent = 'Send My Request';
+        btn.textContent = 'Send My Request →';
         btn.style.background = '';
         btn.disabled = false;
-    }, 4000);
+    }, 5000);
 }
-
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', () => closeNav());
-});
 </script>
 </body>
 </html>
