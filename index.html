@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yates Safety Group — Construction safety consulting, EHS services, OSHA compliance, and safety staffing. Your cornerstone of safety.">
+    <meta name="description" content="Yates Safety Group — Field-focused construction safety consulting, EHS services, OSHA compliance, training, and safety staffing. Your cornerstone of safety.">
     <title>Yates Safety Group | Construction Safety Consulting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --navy:    #1b3261;
-            --navy-dk: #0f1f3d;
+            --navy:    #1b3a6b;
+            --navy-dk: #0f2347;
+            --navy-lt: #2a5298;
             --red:     #be2126;
+            --red-dk:  #931a1e;
+            --charcoal:#4a5058;
             --gray:    #f5f7fa;
             --border:  #e2e8f0;
             --text:    #1a202c;
@@ -25,443 +28,309 @@
         }
 
         html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            color: var(--text);
-            background: var(--white);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
+        body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--white); line-height: 1.65; -webkit-font-smoothing: antialiased; }
         a { text-decoration: none; color: inherit; }
         img { display: block; max-width: 100%; }
 
-        /* ─── TOP BAR ─── */
-        .topbar {
-            background: var(--navy-dk);
-            padding: 9px 0;
-            font-size: 13px;
-            color: rgba(255,255,255,.6);
-        }
-        .topbar-inner {
-            max-width: var(--max); margin: 0 auto; padding: 0 28px;
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        .topbar-left { display: flex; align-items: center; gap: 6px; }
+        /* ── TOP BAR ── */
+        .topbar { background: var(--navy-dk); padding: 9px 0; font-size: 12.5px; color: rgba(255,255,255,.6); }
+        .topbar-inner { max-width: var(--max); margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; }
+        .topbar-left { display: flex; align-items: center; gap: 8px; }
+        .topbar-left svg { width: 13px; height: 13px; fill: none; stroke: var(--red); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
         .topbar-right { display: flex; align-items: center; gap: 20px; }
-        .topbar a { color: rgba(255,255,255,.6); transition: color .15s; }
+        .topbar a { color: rgba(255,255,255,.65); transition: color .15s; }
         .topbar a:hover { color: #fff; }
         .topbar-item { display: flex; align-items: center; gap: 6px; }
         .topbar-item svg { width: 12px; height: 12px; fill: none; stroke: rgba(255,255,255,.45); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-        .topbar-divider { width: 1px; height: 14px; background: rgba(255,255,255,.15); }
 
-        /* ─── NAV ─── */
-        nav {
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            position: sticky; top: 0; z-index: 200;
-            box-shadow: 0 1px 6px rgba(0,0,0,.05);
-        }
-        .nav-inner {
-            max-width: var(--max); margin: 0 auto; padding: 0 28px;
-            height: 80px; display: flex; align-items: center; justify-content: space-between;
-        }
-        .nav-logo { display: flex; align-items: center; gap: 13px; }
-        .nav-logo img { height: 52px; width: auto; }
+        /* ── NAV ── */
+        nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 500; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+        .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 28px; height: 76px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; }
+        .nav-logo img { height: 50px; width: auto; }
         .nav-logo-text { line-height: 1.2; }
-        .nav-logo-name { display: block; font-size: 15px; font-weight: 800; color: var(--navy); letter-spacing: -.2px; }
-        .nav-logo-tag  { display: block; font-size: 10px; font-weight: 600; color: var(--red); letter-spacing: 1.2px; text-transform: uppercase; }
+        .nav-logo-name { display: block; font-size: 14.5px; font-weight: 800; color: var(--navy); letter-spacing: -.2px; }
+        .nav-logo-tag  { display: block; font-size: 10px; font-weight: 600; color: var(--red); letter-spacing: 1.1px; text-transform: uppercase; }
         .nav-links { display: flex; align-items: center; gap: 0; list-style: none; }
-        .nav-links a {
-            font-size: 14px; font-weight: 600; color: var(--mid);
-            padding: 8px 16px; border-radius: 6px;
+        .nav-links > li { position: relative; }
+        .nav-links > li > a {
+            font-size: 13.5px; font-weight: 600; color: var(--mid);
+            padding: 8px 15px; border-radius: 6px; display: flex; align-items: center; gap: 4px;
             transition: color .15s, background .15s;
         }
-        .nav-links a:hover { color: var(--navy); background: var(--gray); }
-        .nav-btn {
-            background: var(--navy); color: var(--white) !important;
-            padding: 10px 22px !important; border-radius: 6px; font-weight: 700 !important;
-            transition: background .15s !important; margin-left: 8px;
-        }
-        .nav-btn:hover { background: var(--navy-dk) !important; background-color: var(--navy-dk) !important; }
-        .hamburger {
-            display: none; flex-direction: column; gap: 5px;
-            cursor: pointer; padding: 6px; background: none; border: none;
-        }
-        .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; }
+        .nav-links > li > a:hover, .nav-links > li.open > a { color: var(--navy); background: var(--gray); }
+        .nav-links > li > a .caret { width: 10px; height: 10px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s; }
+        .nav-links > li.open > a .caret { transform: rotate(180deg); }
 
-        /* ─── HERO ─── */
-        .hero {
-            background: var(--navy-dk);
-            position: relative; overflow: hidden;
-            padding: 100px 28px 96px;
-            text-align: center;
+        /* dropdown */
+        .dropdown {
+            position: absolute; top: calc(100% + 10px); left: 0;
+            background: var(--white); border: 1px solid var(--border);
+            border-radius: 10px; box-shadow: 0 16px 48px rgba(15,35,71,.12);
+            min-width: 230px; padding: 8px; z-index: 600;
+            opacity: 0; visibility: hidden; transform: translateY(-6px);
+            transition: opacity .18s, transform .18s, visibility .18s;
+            pointer-events: none;
         }
+        .nav-links > li.open .dropdown,
+        .nav-links > li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: all; }
+        .dropdown a { display: flex; align-items: flex-start; gap: 12px; padding: 10px 12px; border-radius: 7px; transition: background .12s; }
+        .dropdown a:hover { background: var(--gray); }
+        .dropdown-ico { width: 32px; height: 32px; border-radius: 7px; background: var(--gray); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+        .dropdown-ico svg { width: 15px; height: 15px; fill: none; stroke: var(--navy); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .dropdown-label { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.2; }
+        .dropdown-desc { font-size: 11.5px; color: var(--mid); margin-top: 2px; line-height: 1.4; }
+        .dropdown-divider { height: 1px; background: var(--border); margin: 6px 0; }
+
+        /* nav CTA */
+        .nav-btn { background: var(--red) !important; color: var(--white) !important; padding: 10px 20px !important; border-radius: 6px; font-weight: 700 !important; margin-left: 8px; transition: background .15s !important; }
+        .nav-btn:hover { background: var(--red-dk) !important; }
+
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
+        .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: all .2s; }
+
+        /* ── HERO ── */
+        .hero { background: var(--navy-dk); position: relative; overflow: hidden; padding: 108px 28px 96px; text-align: center; }
         .hero::before {
-            content: '';
-            position: absolute; inset: 0;
-            background-image:
-                linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-            background-size: 48px 48px;
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 50% 110%, rgba(190,33,38,.25) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 40% at 80% 20%, rgba(27,58,107,.6) 0%, transparent 60%);
         }
+        /* Y shape watermark */
         .hero::after {
-            content: '';
-            position: absolute; inset: 0;
-            background: radial-gradient(ellipse at 60% 0%, rgba(190,33,38,.18) 0%, transparent 60%),
-                        radial-gradient(ellipse at 20% 100%, rgba(27,50,97,.6) 0%, transparent 60%);
+            content: 'Y'; position: absolute; right: -2%; top: -8%;
+            font-size: 480px; font-weight: 900; color: rgba(255,255,255,.025);
+            line-height: 1; pointer-events: none; user-select: none;
+            font-family: 'Inter', sans-serif;
         }
-        .hero-inner {
-            max-width: 760px; margin: 0 auto;
-            position: relative; z-index: 1;
-        }
-        .hero-eyebrow {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
-            border-radius: 100px; padding: 5px 16px;
-            font-size: 12px; font-weight: 600; color: rgba(255,255,255,.7);
-            letter-spacing: .8px; text-transform: uppercase; margin-bottom: 28px;
-        }
-        .hero h1 {
-            font-size: clamp(34px, 5vw, 58px); font-weight: 800;
-            color: #fff; line-height: 1.1; letter-spacing: -.03em; margin-bottom: 22px;
-        }
-        .hero h1 em { font-style: normal; color: rgba(255,255,255,.55); }
-        .hero-sub {
-            font-size: 18px; color: rgba(255,255,255,.6); line-height: 1.75;
-            max-width: 580px; margin: 0 auto 40px;
-        }
-        .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-        .btn-primary {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: var(--white); color: var(--navy);
-            font-size: 15px; font-weight: 700; padding: 14px 30px;
-            border-radius: 7px; transition: all .2s;
-        }
-        .btn-primary:hover { background: #edf0f7; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.2); }
-        .btn-secondary {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: transparent; color: rgba(255,255,255,.8);
-            font-size: 15px; font-weight: 600; padding: 13px 28px;
-            border-radius: 7px; border: 1.5px solid rgba(255,255,255,.25);
-            transition: all .2s;
-        }
-        .btn-secondary:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.45); }
+        .hero-inner { position: relative; max-width: 820px; margin: 0 auto; }
+        .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+        .hero-eyebrow::before, .hero-eyebrow::after { content: ''; display: block; width: 28px; height: 1.5px; background: var(--red); }
+        .hero h1 { font-size: clamp(34px, 5vw, 58px); font-weight: 900; color: var(--white); line-height: 1.1; letter-spacing: -.5px; margin-bottom: 22px; }
+        .hero h1 em { font-style: normal; color: #d4e6ff; }
+        .hero-sub { font-size: 17px; color: rgba(255,255,255,.72); max-width: 640px; margin: 0 auto 36px; line-height: 1.7; }
+        .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: var(--red); color: var(--white); padding: 15px 30px; border-radius: 7px; font-weight: 700; font-size: 15px; transition: background .15s, transform .1s; }
+        .btn-primary:hover { background: var(--red-dk); transform: translateY(-1px); }
+        .btn-secondary { background: rgba(255,255,255,.1); color: var(--white); border: 1.5px solid rgba(255,255,255,.25); padding: 15px 30px; border-radius: 7px; font-weight: 600; font-size: 15px; transition: all .15s; }
+        .btn-secondary:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.5); }
 
-        /* ─── STATS STRIP ─── */
-        .stats-strip {
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-        }
-        .stats-inner {
-            max-width: var(--max); margin: 0 auto;
-            display: flex; align-items: stretch;
-        }
-        .stat {
-            flex: 1; text-align: center;
-            padding: 28px 20px;
-            border-right: 1px solid var(--border);
-        }
+        /* ── STATS STRIP ── */
+        .stats-strip { background: var(--navy); border-bottom: 3px solid var(--red); }
+        .stats-inner { max-width: var(--max); margin: 0 auto; display: flex; }
+        .stat { flex: 1; padding: 22px 20px; text-align: center; border-right: 1px solid rgba(255,255,255,.12); }
         .stat:last-child { border-right: none; }
-        .stat-n {
-            font-size: 36px; font-weight: 800;
-            color: var(--navy); line-height: 1; letter-spacing: -.04em;
-            margin-bottom: 5px;
-        }
-        .stat-n sup { font-size: 18px; color: var(--red); }
-        .stat-l { font-size: 13px; color: var(--mid); font-weight: 500; }
+        .stat-n { font-size: 30px; font-weight: 900; color: var(--white); line-height: 1; }
+        .stat-n sup { font-size: 16px; vertical-align: super; }
+        .stat-l { font-size: 11px; font-weight: 600; color: rgba(255,255,255,.55); letter-spacing: .8px; text-transform: uppercase; margin-top: 4px; }
 
-        /* ─── SECTION COMMONS ─── */
+        /* ── SHARED SECTION ── */
         .section { padding: 88px 28px; }
-        .section-alt { background: var(--gray); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .section-alt { background: var(--gray); }
         .inner { max-width: var(--max); margin: 0 auto; }
-        .section-head { margin-bottom: 56px; }
+        .section-head { margin-bottom: 52px; }
         .section-head.center { text-align: center; }
-        .section-head.center p { margin: 0 auto; }
-        .eyebrow {
-            font-size: 11px; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 2.5px; color: var(--red);
-            display: inline-flex; align-items: center; gap: 10px;
-            margin-bottom: 14px;
-        }
-        .eyebrow::before {
-            content: ''; width: 20px; height: 2px;
-            background: var(--red); border-radius: 2px; flex-shrink: 0;
-        }
-        .eyebrow.center { display: flex; justify-content: center; }
-        .eyebrow.center::before { display: none; }
-        h2.title {
-            font-size: clamp(28px, 3.2vw, 40px); font-weight: 800;
-            color: var(--navy); letter-spacing: -.025em; line-height: 1.15; margin-bottom: 16px;
-        }
-        p.sub { font-size: 16px; color: var(--mid); line-height: 1.8; max-width: 600px; }
+        .eyebrow { font-size: 11.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+        .eyebrow.center { text-align: center; }
+        .title { font-size: clamp(26px, 3vw, 38px); font-weight: 800; color: var(--navy); line-height: 1.2; letter-spacing: -.3px; margin-bottom: 14px; }
+        .sub { font-size: 16px; color: var(--mid); max-width: 620px; line-height: 1.7; }
 
-        /* ─── SERVICES GRID ─── */
-        .svc-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-        }
-        .svc-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 36px 30px 30px;
-            display: flex; flex-direction: column;
-            transition: box-shadow .25s, transform .25s, border-color .25s;
-            position: relative; overflow: hidden;
-        }
-        .svc-card::after {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0; height: 3px;
-            background: var(--navy);
-            transform: scaleX(0); transform-origin: left;
-            transition: transform .3s ease;
-        }
-        .svc-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,.1); transform: translateY(-5px); border-color: transparent; }
-        .svc-card:hover::after { transform: scaleX(1); }
-        .svc-icon {
-            width: 58px; height: 58px;
-            background: rgba(27,50,97,.07);
-            border-radius: 14px;
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 22px; flex-shrink: 0;
-        }
-        .svc-icon svg { width: 28px; height: 28px; fill: none; stroke: var(--navy); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
-        .svc-title { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 11px; letter-spacing: -.01em; }
-        .svc-text { font-size: 14px; color: var(--mid); line-height: 1.75; flex: 1; margin-bottom: 22px; }
-        .svc-link {
-            font-size: 13px; font-weight: 700; color: var(--navy);
-            display: inline-flex; align-items: center; gap: 6px;
-            transition: color .15s, gap .15s;
-        }
-        .svc-link:hover { color: var(--red); gap: 10px; }
+        /* ── SERVICES ── */
+        .svc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .svc-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 12px; padding: 28px 24px 24px; transition: box-shadow .2s, border-color .2s, transform .15s; display: flex; flex-direction: column; }
+        .svc-card:hover { border-color: var(--navy); box-shadow: 0 12px 36px rgba(27,58,107,.12); transform: translateY(-3px); }
+        .svc-icon { width: 46px; height: 46px; background: var(--navy); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; flex-shrink: 0; }
+        .svc-icon svg { width: 22px; height: 22px; fill: none; stroke: var(--white); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+        .svc-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
+        .svc-text { font-size: 13.5px; color: var(--mid); line-height: 1.65; flex: 1; }
+        .svc-link { display: inline-block; margin-top: 16px; font-size: 13px; font-weight: 700; color: var(--red); transition: gap .15s; }
+        .svc-link:hover { color: var(--red-dk); }
 
-        /* ─── WHY / STORY ─── */
-        .why-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
-        }
-        .why-text p { font-size: 16px; color: var(--mid); line-height: 1.9; margin-bottom: 20px; }
-        .why-text p strong { color: var(--text); font-weight: 700; }
-        .why-quote {
-            margin-top: 36px; padding: 28px 32px;
-            border-left: 4px solid var(--red);
-            background: var(--white); border-radius: 0 10px 10px 0;
-            box-shadow: 0 2px 12px rgba(0,0,0,.06);
-        }
-        .why-quote blockquote {
-            font-size: 17px; font-style: italic; color: var(--text);
-            line-height: 1.65; font-weight: 500; margin-bottom: 14px;
-        }
-        .why-quote cite {
-            font-size: 12px; font-style: normal; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1px; color: var(--light);
-        }
-        .pillar-list { display: flex; flex-direction: column; gap: 16px; }
-        .pillar {
-            background: var(--white); border: 1px solid var(--border);
-            border-radius: 10px; padding: 22px 22px;
-            display: flex; gap: 18px; align-items: flex-start;
-            transition: box-shadow .2s, transform .2s;
-        }
-        .pillar:hover { box-shadow: 0 6px 20px rgba(0,0,0,.07); transform: translateX(4px); }
-        .pillar-ico {
-            width: 40px; height: 40px; flex-shrink: 0;
-            background: rgba(27,50,97,.07);
-            border-radius: 10px; display: flex; align-items: center; justify-content: center;
-        }
-        .pillar-ico svg { width: 20px; height: 20px; fill: none; stroke: var(--navy); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
-        .pillar-t { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
-        .pillar-p { font-size: 13px; color: var(--mid); line-height: 1.65; }
+        /* ── WHY ── */
+        .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+        .why-text p { font-size: 15.5px; color: var(--mid); line-height: 1.75; margin-bottom: 16px; }
+        .why-text p strong { color: var(--text); }
+        .why-quote { border-left: 4px solid var(--red); padding: 18px 22px; background: rgba(190,33,38,.04); border-radius: 0 8px 8px 0; margin-top: 28px; }
+        .why-quote blockquote { font-family: 'Merriweather', Georgia, serif; font-style: italic; font-size: 15px; color: var(--text); line-height: 1.7; }
+        .why-quote cite { display: block; margin-top: 10px; font-size: 12.5px; font-weight: 700; color: var(--red); letter-spacing: .5px; font-style: normal; }
+        .pillar-list { display: flex; flex-direction: column; gap: 24px; }
+        .pillar { display: flex; gap: 16px; align-items: flex-start; }
+        .pillar-ico { width: 40px; height: 40px; background: rgba(27,58,107,.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .pillar-ico svg { width: 18px; height: 18px; fill: none; stroke: var(--navy); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .pillar-t { font-size: 14.5px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+        .pillar-p { font-size: 13.5px; color: var(--mid); line-height: 1.65; }
 
-        /* ─── CERTS ─── */
-        .certs-row {
-            display: flex; align-items: stretch; flex-wrap: wrap;
-            border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
-        }
-        .cert {
-            flex: 1; min-width: 220px;
-            display: flex; align-items: center; gap: 18px;
-            padding: 28px 32px;
-            border-right: 1px solid var(--border);
-            background: var(--white);
-        }
+        /* Mental health highlight */
+        .mh-highlight { margin-top: 28px; background: var(--navy); border-radius: 12px; padding: 22px 24px; }
+        .mh-highlight-tag { font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+        .mh-highlight h4 { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+        .mh-highlight p { font-size: 13.5px; color: rgba(255,255,255,.7); line-height: 1.65; }
+
+        /* ── CERTIFICATIONS ── */
+        .certs-row { display: flex; }
+        .cert { flex: 1; display: flex; align-items: center; gap: 16px; padding: 28px 32px; border-right: 1px solid var(--border); }
         .cert:last-child { border-right: none; }
-        .cert-badge {
-            width: 52px; height: 52px; flex-shrink: 0; border-radius: 10px;
-            background: var(--navy); display: flex;
-            align-items: center; justify-content: center;
-        }
-        .cert-badge svg { width: 24px; height: 24px; fill: none; stroke: #fff; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
-        .cert-name { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
-        .cert-sub { font-size: 12px; color: var(--light); font-weight: 500; line-height: 1.4; }
+        .cert-badge { width: 48px; height: 48px; background: var(--navy); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .cert-badge svg { width: 22px; height: 22px; fill: none; stroke: var(--white); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .cert-name { font-size: 14.5px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+        .cert-sub { font-size: 12px; color: var(--mid); }
 
-        /* ─── TESTIMONIALS ─── */
+        /* ── TESTIMONIALS ── */
         .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .testi {
-            background: var(--white); border: 1px solid var(--border);
-            border-radius: 12px; padding: 32px 28px;
-            display: flex; flex-direction: column;
-        }
-        .testi-stars { color: #f59e0b; font-size: 15px; letter-spacing: 2px; margin-bottom: 18px; }
-        .testi blockquote { font-size: 15px; color: var(--mid); line-height: 1.8; font-style: italic; flex: 1; margin-bottom: 24px; }
-        .testi-divider { width: 32px; height: 2px; background: var(--border); margin-bottom: 16px; border-radius: 2px; }
-        .testi-name { font-size: 14px; font-weight: 700; color: var(--text); }
-        .testi-role { font-size: 12px; color: var(--light); margin-top: 3px; }
+        .testi { background: var(--gray); border-radius: 12px; padding: 28px; border: 1.5px solid var(--border); }
+        .testi-stars { color: #f59e0b; font-size: 15px; letter-spacing: 2px; margin-bottom: 14px; }
+        .testi blockquote { font-size: 14px; color: var(--mid); line-height: 1.7; font-style: italic; }
+        .testi-divider { height: 1px; background: var(--border); margin: 16px 0; }
+        .testi-name { font-size: 13.5px; font-weight: 700; color: var(--navy); }
+        .testi-role { font-size: 12px; color: var(--light); margin-top: 2px; }
 
-        /* ─── RESOURCES ─── */
+        /* ── RESOURCES ── */
         .res-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .res-card {
-            border: 1px solid var(--border); border-radius: 12px;
-            overflow: hidden; background: var(--white);
-            transition: box-shadow .2s, transform .2s;
-        }
-        .res-card:hover { box-shadow: 0 12px 36px rgba(0,0,0,.09); transform: translateY(-4px); }
-        .res-top {
-            padding: 30px 28px 24px;
-            border-bottom: 1px solid var(--border);
-        }
-        .res-num { font-size: 48px; font-weight: 800; color: var(--border); line-height: 1; margin-bottom: 14px; letter-spacing: -.05em; }
-        .res-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-        .res-type { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--light); }
-        .res-body { padding: 22px 28px 28px; }
-        .res-body p { font-size: 14px; color: var(--mid); line-height: 1.75; margin-bottom: 20px; }
-        .res-link {
-            font-size: 13px; font-weight: 700; color: var(--navy);
-            display: inline-flex; align-items: center; gap: 6px;
-            transition: color .15s, gap .15s;
-        }
-        .res-link:hover { color: var(--red); gap: 10px; }
+        .res-card { background: var(--white); border-radius: 12px; border: 1.5px solid var(--border); overflow: hidden; transition: box-shadow .2s, transform .15s; }
+        .res-card:hover { box-shadow: 0 12px 32px rgba(27,58,107,.1); transform: translateY(-3px); }
+        .res-top { background: var(--navy); padding: 28px 24px 22px; }
+        .res-num { font-size: 40px; font-weight: 900; color: rgba(255,255,255,.15); line-height: 1; margin-bottom: 8px; }
+        .res-title { font-size: 18px; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+        .res-type { font-size: 11px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,255,255,.5); }
+        .res-body { padding: 24px; }
+        .res-body p { font-size: 14px; color: var(--mid); line-height: 1.7; }
+        .res-link { display: inline-block; margin-top: 16px; font-size: 13px; font-weight: 700; color: var(--red); }
+        .res-link:hover { color: var(--red-dk); }
 
-        /* ─── CTA BAND ─── */
-        .cta-band {
-            background: var(--navy); padding: 80px 28px; text-align: center;
-            position: relative; overflow: hidden;
+        /* ── DOCUMENT PORTAL ── */
+        .portal-section { background: var(--navy-dk); padding: 88px 28px; position: relative; overflow: hidden; }
+        .portal-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse 60% 80% at 10% 50%, rgba(27,58,107,.6) 0%, transparent 70%),
+                        radial-gradient(ellipse 40% 60% at 90% 50%, rgba(190,33,38,.15) 0%, transparent 70%);
         }
-        .cta-band::before {
-            content: '';
-            position: absolute; inset: 0;
-            background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-            background-size: 56px 56px;
-        }
-        .cta-band-inner { position: relative; z-index: 1; }
-        .cta-band h2 { font-size: clamp(28px, 3.5vw, 42px); font-weight: 800; color: #fff; margin-bottom: 16px; letter-spacing: -.025em; }
-        .cta-band p { font-size: 18px; color: rgba(255,255,255,.55); line-height: 1.75; margin-bottom: 36px; max-width: 540px; margin-left: auto; margin-right: auto; }
-        .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-        .cta-btn-w { background: #fff; color: var(--navy); font-size: 15px; font-weight: 700; padding: 14px 30px; border-radius: 7px; display: inline-flex; align-items: center; gap: 8px; transition: all .2s; }
-        .cta-btn-w:hover { background: #edf0f7; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.2); }
-        .cta-btn-o { background: transparent; color: rgba(255,255,255,.75); font-size: 15px; font-weight: 600; padding: 13px 28px; border-radius: 7px; border: 1.5px solid rgba(255,255,255,.25); display: inline-flex; align-items: center; gap: 8px; transition: all .2s; }
-        .cta-btn-o:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.45); }
+        .portal-inner { max-width: var(--max); margin: 0 auto; position: relative; }
+        .portal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+        .portal-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(190,33,38,.2); border: 1px solid rgba(190,33,38,.4); color: #ff8a8a; font-size: 11.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; margin-bottom: 18px; }
+        .portal-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--red); animation: blink 1.4s ease-in-out infinite; }
+        @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:.3; } }
+        .portal-text h2 { font-size: clamp(26px, 3vw, 38px); font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 18px; }
+        .portal-text p { font-size: 15px; color: rgba(255,255,255,.7); line-height: 1.75; margin-bottom: 16px; }
+        .portal-scenario { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 10px; padding: 20px 24px; margin-top: 24px; }
+        .portal-scenario-tag { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+        .portal-scenario p { font-size: 13.5px; color: rgba(255,255,255,.65); line-height: 1.7; margin-bottom: 0; }
+        .portal-visual { display: flex; flex-direction: column; gap: 16px; }
+        .portal-card { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 20px 22px; display: flex; align-items: flex-start; gap: 16px; transition: background .2s; }
+        .portal-card:hover { background: rgba(255,255,255,.11); }
+        .portal-card-ico { width: 42px; height: 42px; border-radius: 10px; background: rgba(190,33,38,.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .portal-card-ico svg { width: 20px; height: 20px; fill: none; stroke: #ff8a8a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .portal-card-title { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+        .portal-card-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.6; }
+        .portal-cta { display: inline-block; margin-top: 28px; background: var(--red); color: var(--white); padding: 14px 26px; border-radius: 7px; font-weight: 700; font-size: 14.5px; transition: background .15s; }
+        .portal-cta:hover { background: var(--red-dk); }
+        .portal-note { font-size: 12px; color: rgba(255,255,255,.35); margin-top: 12px; }
 
-        /* ─── FORM SECTION ─── */
-        .form-layout { display: grid; grid-template-columns: 1fr 500px; gap: 80px; align-items: start; }
-        .form-left h2 { font-size: clamp(26px, 3vw, 36px); font-weight: 800; color: var(--navy); margin-bottom: 18px; letter-spacing: -.02em; }
-        .form-left p { font-size: 16px; color: var(--mid); line-height: 1.8; margin-bottom: 32px; }
-        .form-contact { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-        .form-contact-ico { width: 40px; height: 40px; background: var(--white); border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .form-contact-ico svg { width: 18px; height: 18px; fill: none; stroke: var(--navy); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
-        .form-contact-text { font-size: 15px; font-weight: 600; color: var(--text); }
-        .form-contact-text a { color: var(--navy); }
-        .form-contact-text a:hover { text-decoration: underline; }
-        .badge-row { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; }
-        .badge {
-            display: inline-flex; align-items: center; gap: 7px;
-            background: var(--white); border: 1px solid var(--border);
-            border-radius: 6px; padding: 7px 14px;
-            font-size: 12px; font-weight: 700; color: var(--text);
-        }
+        /* ── CTA BAND ── */
+        .cta-band { background: var(--red); padding: 64px 28px; text-align: center; }
+        .cta-band-inner { max-width: 700px; margin: 0 auto; }
+        .cta-band h2 { font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: var(--white); margin-bottom: 12px; line-height: 1.2; }
+        .cta-band p { font-size: 16px; color: rgba(255,255,255,.8); margin-bottom: 28px; line-height: 1.65; }
+        .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .cta-btn-w { background: var(--white); color: var(--red); padding: 14px 28px; border-radius: 7px; font-weight: 700; font-size: 14.5px; transition: all .15s; }
+        .cta-btn-w:hover { background: #f5e6e6; }
+        .cta-btn-o { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.5); padding: 14px 28px; border-radius: 7px; font-weight: 600; font-size: 14.5px; transition: all .15s; }
+        .cta-btn-o:hover { border-color: var(--white); background: rgba(255,255,255,.1); }
+
+        /* ── FORM ── */
+        .form-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; align-items: start; }
+        .form-left .eyebrow { margin-bottom: 10px; }
+        .form-left h2 { font-size: 30px; font-weight: 800; color: var(--navy); margin-bottom: 16px; line-height: 1.2; }
+        .form-left p { font-size: 15px; color: var(--mid); line-height: 1.75; margin-bottom: 28px; }
+        .form-contact { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+        .form-contact-ico { width: 40px; height: 40px; background: rgba(27,58,107,.08); border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .form-contact-ico svg { width: 16px; height: 16px; fill: none; stroke: var(--navy); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .form-contact-text a { font-size: 14px; font-weight: 600; color: var(--navy); }
+        .badge-row { display: flex; gap: 10px; flex-wrap: wrap; }
+        .badge { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--mid); }
         .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--navy); flex-shrink: 0; }
-        .form-card {
-            background: var(--white); border: 1px solid var(--border);
-            border-radius: 14px; padding: 40px 36px;
-            box-shadow: 0 8px 32px rgba(0,0,0,.08);
-        }
-        .form-card-h { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 28px; }
+        .form-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 14px; padding: 36px 32px; box-shadow: 0 8px 40px rgba(27,58,107,.08); }
+        .form-card-h { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 24px; }
         .fg2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
         .fld { margin-bottom: 16px; }
-        .fld label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--light); margin-bottom: 7px; }
+        .fld label { display: block; font-size: 12.5px; font-weight: 600; color: var(--text); margin-bottom: 6px; letter-spacing: .3px; }
         .fld input, .fld select, .fld textarea {
-            width: 100%; padding: 12px 14px;
-            border: 1.5px solid var(--border); border-radius: 7px;
-            font-size: 14px; font-family: 'Inter', sans-serif;
-            color: var(--text); background: var(--white); outline: none;
-            -webkit-appearance: none; appearance: none;
-            transition: border-color .15s, box-shadow .15s;
+            width: 100%; padding: 11px 13px; border: 1.5px solid var(--border); border-radius: 7px;
+            font-family: inherit; font-size: 14px; color: var(--text); background: var(--white);
+            transition: border-color .15s, box-shadow .15s; outline: none;
         }
-        .fld input:focus, .fld select:focus, .fld textarea:focus {
-            border-color: var(--navy); box-shadow: 0 0 0 3px rgba(27,50,97,.1);
-        }
-        .fld textarea { min-height: 90px; resize: vertical; }
+        .fld input:focus, .fld select:focus, .fld textarea:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(27,58,107,.1); }
+        .fld textarea { min-height: 100px; resize: vertical; }
         .form-submit {
-            width: 100%; padding: 15px; background: var(--navy); color: #fff;
-            border: none; border-radius: 7px; font-size: 15px; font-weight: 700;
-            font-family: 'Inter', sans-serif; cursor: pointer; margin-top: 4px;
-            transition: background .15s, transform .15s;
+            width: 100%; padding: 14px; background: var(--navy); color: var(--white);
+            border: none; border-radius: 7px; font-family: inherit; font-size: 15px;
+            font-weight: 700; cursor: pointer; transition: background .15s; margin-top: 4px;
         }
-        .form-submit:hover { background: var(--navy-dk); transform: translateY(-1px); }
-        .form-note { text-align: center; font-size: 12px; color: var(--light); margin-top: 14px; line-height: 1.6; }
+        .form-submit:hover { background: var(--navy-lt); }
+        .form-note { font-size: 12px; color: var(--light); text-align: center; margin-top: 14px; line-height: 1.5; }
+        .form-success { display: none; text-align: center; padding: 28px; }
+        .form-success svg { width: 48px; height: 48px; stroke: #16a34a; margin: 0 auto 14px; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+        .form-success h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+        .form-success p { font-size: 14px; color: var(--mid); }
 
-        /* ─── FOOTER ─── */
-        footer { background: var(--navy-dk); padding: 64px 28px 32px; }
-        .footer-grid {
-            max-width: var(--max); margin: 0 auto;
-            display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 52px;
-            padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 28px;
-        }
-        .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-        .footer-logo img { height: 40px; filter: brightness(0) invert(1); opacity: .65; }
-        .footer-logo-n { font-size: 14px; font-weight: 700; color: rgba(255,255,255,.7); }
-        .footer-brand p { font-size: 13px; color: rgba(255,255,255,.35); line-height: 1.8; margin-bottom: 14px; }
-        .footer-email a { font-size: 13px; color: rgba(255,255,255,.45); transition: color .15s; }
-        .footer-email a:hover { color: #fff; }
-        .footer-col h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,.3); margin-bottom: 16px; }
-        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-        .footer-col a { font-size: 13px; color: rgba(255,255,255,.45); font-weight: 500; transition: color .15s; }
-        .footer-col a:hover { color: rgba(255,255,255,.9); }
-        .footer-bottom {
-            max-width: var(--max); margin: 0 auto;
-            display: flex; justify-content: space-between; align-items: center;
-            font-size: 12px; color: rgba(255,255,255,.25); flex-wrap: wrap; gap: 8px;
-        }
+        /* ── FOOTER ── */
+        footer { background: var(--navy-dk); padding: 60px 28px 0; }
+        .footer-grid { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; }
+        .footer-brand p { font-size: 13.5px; color: rgba(255,255,255,.5); line-height: 1.7; margin: 14px 0 18px; }
+        .footer-logo { display: flex; align-items: center; gap: 10px; }
+        .footer-logo img { height: 40px; width: auto; filter: brightness(0) invert(1); opacity: .85; }
+        .footer-logo-n { font-size: 14px; font-weight: 800; color: var(--white); }
+        .footer-email a { font-size: 13px; color: rgba(255,255,255,.5); transition: color .15s; }
+        .footer-email a:hover { color: var(--white); }
+        footer h4 { font-size: 11.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 18px; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li + li { margin-top: 10px; }
+        .footer-col ul a { font-size: 13.5px; color: rgba(255,255,255,.5); transition: color .15s; }
+        .footer-col ul a:hover { color: var(--white); }
+        .footer-bottom { max-width: var(--max); margin: 0 auto; border-top: 1px solid rgba(255,255,255,.08); padding: 20px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .footer-bottom span { font-size: 12.5px; color: rgba(255,255,255,.3); }
+        .footer-red { color: var(--red) !important; }
 
-        /* ─── MOBILE ─── */
+        /* ── RESPONSIVE ── */
         @media (max-width: 1024px) {
-            .why-grid { grid-template-columns: 1fr; gap: 48px; }
-            .form-layout { grid-template-columns: 1fr; gap: 48px; }
-            .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-        }
-        @media (max-width: 900px) {
             .svc-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: 1fr; gap: 48px; }
+            .portal-grid { grid-template-columns: 1fr; gap: 48px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
             .testi-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
             .res-grid { grid-template-columns: 1fr 1fr; }
             .certs-row { flex-wrap: wrap; }
-            .cert { min-width: 50%; }
+            .cert { min-width: 50%; border-right: none; border-bottom: 1px solid var(--border); }
+            .cert:last-child { border-bottom: none; }
+            .form-layout { grid-template-columns: 1fr; gap: 40px; }
+            .testi-grid { grid-template-columns: 1fr; }
+            .stats-inner { flex-wrap: wrap; }
+            .stat { min-width: 50%; }
         }
         @media (max-width: 640px) {
             .hamburger { display: flex; }
             .nav-links {
-                display: none; position: absolute;
-                top: 80px; left: 0; right: 0;
+                display: none; position: fixed; top: 76px; left: 0; right: 0; bottom: 0;
                 background: var(--white); border-top: 1px solid var(--border);
-                box-shadow: 0 16px 40px rgba(0,0,0,.1);
-                flex-direction: column; padding: 12px; gap: 2px;
+                flex-direction: column; padding: 12px; gap: 2px; overflow-y: auto;
+                box-shadow: 0 24px 60px rgba(0,0,0,.15);
             }
             .nav-links.open { display: flex; }
-            .nav-links a { display: block; padding: 12px 16px; }
+            .nav-links > li > a { display: flex; padding: 13px 14px; width: 100%; }
+            .dropdown { position: static; box-shadow: none; border: none; border-radius: 0; opacity: 1; visibility: visible; transform: none; pointer-events: all; background: var(--gray); margin: 4px 0; display: none; }
+            .nav-links > li.open .dropdown { display: block; }
             .nav-btn { margin-left: 0; }
             .topbar { display: none; }
             .hero { padding: 72px 20px 64px; }
             .section { padding: 64px 20px; }
+            .portal-section { padding: 64px 20px; }
             .svc-grid { grid-template-columns: 1fr; }
             .res-grid { grid-template-columns: 1fr; }
-            .testi-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
             .fg2 { grid-template-columns: 1fr; }
-            .form-card { padding: 28px 22px; }
-            .cert { min-width: 100%; border-right: none; border-bottom: 1px solid var(--border); }
-            .cert:last-child { border-bottom: none; }
-            .stats-inner { flex-wrap: wrap; }
-            .stat { min-width: 50%; border-bottom: 1px solid var(--border); }
+            .form-card { padding: 24px 18px; }
+            .cert { min-width: 100%; }
         }
     </style>
 </head>
@@ -471,6 +340,7 @@
 <div class="topbar">
     <div class="topbar-inner">
         <div class="topbar-left">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             <span>WBENC Certified &nbsp;·&nbsp; ACI Member &nbsp;·&nbsp; Women-Owned Business</span>
         </div>
         <div class="topbar-right">
@@ -492,14 +362,62 @@
                 <span class="nav-logo-tag">Your Cornerstone of Safety</span>
             </div>
         </a>
-        <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+        <button class="hamburger" id="hamburger" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#services" onclick="closeNav()">Services</a></li>
-            <li><a href="#why" onclick="closeNav()">Why YSG</a></li>
-            <li><a href="#resources" onclick="closeNav()">Resources</a></li>
-            <li><a href="#consultation" class="nav-btn" onclick="closeNav()">Free Consultation</a></li>
+            <li><a href="#services" onclick="closeMobile()">Services</a></li>
+            <li class="nav-dropdown" id="ddWhy">
+                <a href="#why" onclick="toggleDD('ddWhy', event)">
+                    Why YSG
+                    <svg class="caret" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <div class="dropdown">
+                    <a href="#why" onclick="closeMobile()">
+                        <div class="dropdown-ico"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+                        <div><div class="dropdown-label">Our Story</div><div class="dropdown-desc">22 years in the trades — where it all began</div></div>
+                    </a>
+                    <a href="#why-mission" onclick="closeMobile()">
+                        <div class="dropdown-ico"><svg viewBox="0 0 24 24"><path d="M12 2L3 7v10l9 5 9-5V7z"/></svg></div>
+                        <div><div class="dropdown-label">Our Mission</div><div class="dropdown-desc">What drives YSG and what we promise you</div></div>
+                    </a>
+                    <a href="#mental-health" onclick="closeMobile()">
+                        <div class="dropdown-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+                        <div><div class="dropdown-label">Mental Health Commitment</div><div class="dropdown-desc">Advocating for the whole worker</div></div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#consultation" onclick="closeMobile()">
+                        <div class="dropdown-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+                        <div><div class="dropdown-label">Meet Dawn</div><div class="dropdown-desc">Request a personal consultation</div></div>
+                    </a>
+                </div>
+            </li>
+            <li class="nav-dropdown" id="ddRes">
+                <a href="#resources" onclick="toggleDD('ddRes', event)">
+                    Resources
+                    <svg class="caret" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <div class="dropdown">
+                    <a href="#resources" onclick="closeMobile()">
+                        <div class="dropdown-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                        <div><div class="dropdown-label">Toolbox Talks</div><div class="dropdown-desc">Free downloadable field safety topics</div></div>
+                    </a>
+                    <a href="#resources" onclick="closeMobile()">
+                        <div class="dropdown-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+                        <div><div class="dropdown-label">Mental Health Resources</div><div class="dropdown-desc">Construction & trades support guides</div></div>
+                    </a>
+                    <a href="#resources" onclick="closeMobile()">
+                        <div class="dropdown-ico"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                        <div><div class="dropdown-label">Free Regional Classes</div><div class="dropdown-desc">OSHA training & certifications near you</div></div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#portal" onclick="closeMobile()">
+                        <div class="dropdown-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+                        <div><div class="dropdown-label">Document Portal</div><div class="dropdown-desc">QR-coded worker records — coming soon</div></div>
+                    </a>
+                </div>
+            </li>
+            <li><a href="#consultation" class="nav-btn" onclick="closeMobile()">Free Consultation</a></li>
         </ul>
     </div>
 </nav>
@@ -509,7 +427,7 @@
     <div class="hero-inner">
         <div class="hero-eyebrow">Construction Safety &amp; EHS Consulting</div>
         <h1>Protecting Your People<br><em>Is the Job That Matters Most</em></h1>
-        <p class="hero-sub">Yates Safety Group partners with contractors, owners, and construction organizations to deliver field-focused safety leadership — built around the people doing the real work.</p>
+        <p class="hero-sub">Yates Safety Group partners with contractors, owners, and construction organizations to deliver field-focused safety leadership — built by someone who has worked every level of the trades.</p>
         <div class="hero-btns">
             <a href="#consultation" class="btn-primary">Request a Free Consultation &nbsp;→</a>
             <a href="#services" class="btn-secondary">Explore Our Services</a>
@@ -545,82 +463,57 @@
         <div class="section-head">
             <div class="eyebrow">What We Do</div>
             <h2 class="title">Comprehensive Safety Services</h2>
-            <p class="sub">From supplemental field staffing to full program development, YSG delivers scalable, experienced safety solutions tailored to your operation.</p>
+            <p class="sub">From supplemental field staffing to full program development, YSG delivers scalable, experienced safety solutions tailored to your operation and your people.</p>
         </div>
         <div class="svc-grid">
-
             <div class="svc-card">
-                <div class="svc-icon">
-                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-                </div>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
                 <div class="svc-title">Safety Staffing &amp; Leadership</div>
                 <div class="svc-text">Interim Safety Directors, Project Safety Managers, and field safety support — scalable to your project timeline and complexity.</div>
-                <a href="#consultation" class="svc-link">Learn More &nbsp;→</a>
+                <a href="#consultation" class="svc-link">Get Started &nbsp;→</a>
             </div>
-
             <div class="svc-card">
-                <div class="svc-icon">
-                    <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-                </div>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
                 <div class="svc-title">Safety Audits &amp; Inspections</div>
                 <div class="svc-text">Comprehensive site audits that close the gap between your written safety program and how work actually gets done in the field.</div>
-                <a href="#consultation" class="svc-link">Learn More &nbsp;→</a>
+                <a href="#consultation" class="svc-link">Get Started &nbsp;→</a>
             </div>
-
             <div class="svc-card">
-                <div class="svc-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
                 <div class="svc-title">OSHA Compliance &amp; Investigation</div>
-                <div class="svc-text">Expert guidance through inspections, citations, corrective action planning, and emergency OSHA call-out response.</div>
-                <a href="#consultation" class="svc-link">Learn More &nbsp;→</a>
+                <div class="svc-text">Expert guidance through inspections, citations, corrective action planning, and emergency OSHA call-out response when you need it most.</div>
+                <a href="#consultation" class="svc-link">Get Started &nbsp;→</a>
             </div>
-
             <div class="svc-card">
-                <div class="svc-icon">
-                    <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                </div>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
                 <div class="svc-title">Risk Assessment &amp; Hazard Analysis</div>
                 <div class="svc-text">JHA, PTP, and HRA planning for high-risk activities — fall protection, LOTO, confined space, crane, rigging, and excavation safety.</div>
-                <a href="#consultation" class="svc-link">Learn More &nbsp;→</a>
+                <a href="#consultation" class="svc-link">Get Started &nbsp;→</a>
             </div>
-
             <div class="svc-card">
-                <div class="svc-icon">
-                    <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                </div>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
                 <div class="svc-title">Training &amp; Program Development</div>
-                <div class="svc-text">OSHA-compliant training, drug-free workplace policies, toolbox talks, and safety programs written in plain language your workforce will use.</div>
-                <a href="#consultation" class="svc-link">Learn More &nbsp;→</a>
+                <div class="svc-text">OSHA-compliant training, drug-free workplace policies, toolbox talks, and safety programs written in plain language your workforce will actually use.</div>
+                <a href="#consultation" class="svc-link">Get Started &nbsp;→</a>
             </div>
-
             <div class="svc-card">
-                <div class="svc-icon">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                </div>
-                <div class="svc-title">Safety Culture &amp; Leadership Coaching</div>
-                <div class="svc-text">Bridge the gap between written programs and field reality through leadership coaching, accountability strategies, and culture improvement.</div>
-                <a href="#consultation" class="svc-link">Learn More &nbsp;→</a>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+                <div class="svc-title">Drug-Free Workplace Management</div>
+                <div class="svc-text">Full administration of your drug-free workplace program — policy development, testing coordination, documentation, and compliance reporting.</div>
+                <a href="#consultation" class="svc-link">Get Started &nbsp;→</a>
             </div>
-
             <div class="svc-card">
-                <div class="svc-icon">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                </div>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
                 <div class="svc-title">Document Management &amp; Prequalification</div>
-                <div class="svc-text">Organized, accessible safety documentation and GC prequalification support — so the right records are there when your crew needs them.</div>
-                <a href="#consultation" class="svc-link">Learn More &nbsp;→</a>
+                <div class="svc-text">Organized, accessible safety documentation and GC prequalification support — so the right records are there when your crew needs them at 6 AM.</div>
+                <a href="#consultation" class="svc-link">Get Started &nbsp;→</a>
             </div>
-
             <div class="svc-card">
-                <div class="svc-icon">
-                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .93h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                </div>
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .93h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
                 <div class="svc-title">Emergency Response &amp; OSHA Call-Out</div>
                 <div class="svc-text">Rapid, experienced response when an incident or OSHA inspection can't wait. Because when something goes wrong, you can't afford to search for help.</div>
-                <a href="#consultation" class="svc-link">Learn More &nbsp;→</a>
+                <a href="#consultation" class="svc-link">Get Started &nbsp;→</a>
             </div>
-
         </div>
     </div>
 </section>
@@ -629,17 +522,27 @@
 <section id="why" class="section">
     <div class="inner">
         <div class="why-grid">
+            <!-- Left: Story -->
             <div class="why-text">
                 <div class="eyebrow">Why Yates Safety Group</div>
                 <h2 class="title">Built from the trades.<br>Built for the field.</h2>
-                <p>Yates Safety Group was founded by <strong>Dawn Yates</strong> — a safety professional who came up through the skilled trades. With <strong>22 years of field experience</strong>, Dawn has worked alongside ironworkers, welders, operators, and laborers. She has seen firsthand what happens when safety is treated as a compliance checkbox — and what's possible when it isn't.</p>
-                <p>That experience is the foundation of everything YSG does. Not safety from behind a desk — safety from the field. Practical, real-world, and built around the realities your workforce faces every day.</p>
-                <p>YSG's mission is to become a trusted safety partner that helps organizations protect their workforce, reduce risk, and build safety systems that actually work — not just on paper.</p>
+                <p>Yates Safety Group was founded by <strong>Theadesa "Dawn" Yates</strong> — a safety professional who didn't start behind a desk. Dawn spent <strong>22 years in the skilled trades</strong>, working alongside ironworkers, welders, pipefitters, and laborers. She's been in the hard hat at 6 AM. She's been the person who needed the safety plan — and didn't have one.</p>
+                <p>That experience is the foundation of everything YSG does. When Dawn walks a job site, she isn't reading it from a checklist. She sees it through the eyes of every worker who has ever shown up to do the real work — and she knows exactly what's at stake when safety falls short.</p>
+                <p id="why-mission">YSG's mission is to become your most trusted safety partner — protecting your workforce, reducing risk, and building systems that actually work, not just on paper. That promise extends beyond the company to the people it serves: <strong>Your People.</strong></p>
                 <div class="why-quote">
-                    <blockquote>"Our commitment is not to help you meet the minimum. Our commitment is to Your People — the ones showing up at 6 AM, doing the real work, counting on someone to have their back."</blockquote>
-                    <cite>— Dawn Yates, Founder, Yates Safety Group</cite>
+                    <blockquote>"Our commitment isn't to help you meet the minimum. It's to the people showing up at 6 AM, doing the real work, counting on someone to have their back. That someone is us."</blockquote>
+                    <cite>— Theadesa "Dawn" Yates, Founder &amp; Principal Safety Consultant, YSG</cite>
+                </div>
+
+                <!-- Mental health highlight -->
+                <div id="mental-health" class="mh-highlight">
+                    <div class="mh-highlight-tag">Mental Health &amp; Wellness</div>
+                    <h4>Advocacy That Goes Beyond the Job Site</h4>
+                    <p>Dawn's commitment to construction workers extends to mental health — an issue the industry too often ignores. She has been a driving voice in bringing mental health resources to the construction trades, including contributing to the Mental Health &amp; Wellness initiative recognized by Allied Construction Industries. Because protecting your people means protecting the whole person.</p>
                 </div>
             </div>
+
+            <!-- Right: Pillars -->
             <div>
                 <div class="eyebrow">Our Commitment</div>
                 <h2 class="title" style="margin-bottom:32px;">What sets YSG apart</h2>
@@ -648,28 +551,35 @@
                         <div class="pillar-ico"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
                         <div>
                             <div class="pillar-t">Your People, First and Always</div>
-                            <div class="pillar-p">Every worker deserves to go home the same way they arrived. That promise is at the center of every audit, every plan, every client engagement.</div>
+                            <div class="pillar-p">Every worker deserves to go home the same way they arrived. That promise is at the center of every audit, every training session, every client engagement YSG takes on.</div>
                         </div>
                     </div>
                     <div class="pillar">
                         <div class="pillar-ico"><svg viewBox="0 0 24 24"><path d="M12 2L3 7v10l9 5 9-5V7z"/></svg></div>
                         <div>
                             <div class="pillar-t">Field Reality, Not Office Theory</div>
-                            <div class="pillar-p">We close the gap between written programs and how work actually happens. Policies only protect people if they reflect real field conditions.</div>
+                            <div class="pillar-p">We close the gap between what's written in a binder and how work actually happens. Safety policies only protect people if they reflect real field conditions.</div>
                         </div>
                     </div>
                     <div class="pillar">
                         <div class="pillar-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
                         <div>
                             <div class="pillar-t">Proactive, Not Just Reactive</div>
-                            <div class="pillar-p">We identify and control risk before incidents do — through planning, coaching, and accountability at every level of your organization.</div>
+                            <div class="pillar-p">We identify and control risk before incidents occur — through planning, leadership coaching, and accountability at every level of your organization.</div>
                         </div>
                     </div>
                     <div class="pillar">
                         <div class="pillar-ico"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
                         <div>
                             <div class="pillar-t">Women-Owned &amp; Industry-Recognized</div>
-                            <div class="pillar-p">WBENC certified and an ACI member, YSG brings credibility and a commitment to elevating the standard for construction safety.</div>
+                            <div class="pillar-p">WBENC certified and an Allied Construction Industries member, YSG brings both credibility and an elevated standard for what construction safety consulting can be.</div>
+                        </div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-ico"><svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+                        <div>
+                            <div class="pillar-t">A Name You Can Trust</div>
+                            <div class="pillar-p">The name Yates Safety Group isn't just branding — it is a promise. A promise of dedication, integrity, and genuine care for the people and organizations YSG serves.</div>
                         </div>
                     </div>
                 </div>
@@ -723,13 +633,13 @@
     <div class="inner">
         <div class="section-head center">
             <div class="eyebrow center">Client Feedback</div>
-            <h2 class="title">What our clients say</h2>
-            <p class="sub" style="text-align:center; margin:0 auto;">Real experiences from the organizations and teams YSG has partnered with to protect their people.</p>
+            <h2 class="title">What our partners say</h2>
+            <p class="sub" style="text-align:center;margin:0 auto;">Real experiences from the organizations and teams YSG has partnered with to protect their people.</p>
         </div>
         <div class="testi-grid">
             <div class="testi">
                 <div class="testi-stars">★★★★★</div>
-                <blockquote>"Dawn brought a level of field credibility our team hadn't experienced from a safety consultant before. She speaks the same language as our crews — which made the difference in getting real buy-in on the job."</blockquote>
+                <blockquote>"Dawn brought a level of field credibility our team hadn't experienced from a safety consultant before. She speaks the same language as our crews — and that made all the difference in getting real buy-in on the job."</blockquote>
                 <div class="testi-divider"></div>
                 <div class="testi-name">General Contractor</div>
                 <div class="testi-role">Commercial Construction, Ohio</div>
@@ -743,7 +653,7 @@
             </div>
             <div class="testi">
                 <div class="testi-stars">★★★★★</div>
-                <blockquote>"YSG handled our prequalification package and safety documentation from end to end. The organization alone saved our PMs hours every week. We should have done this years ago."</blockquote>
+                <blockquote>"YSG handled our prequalification package and safety documentation end to end. The organization alone saved our PMs hours every week. We should have done this years ago."</blockquote>
                 <div class="testi-divider"></div>
                 <div class="testi-name">Project Manager</div>
                 <div class="testi-role">Industrial Contractor</div>
@@ -768,7 +678,7 @@
                     <div class="res-type">Free Downloads</div>
                 </div>
                 <div class="res-body">
-                    <p>Ready-to-use toolbox talks covering the most common construction hazards — written in plain language your crew will actually engage with. New topics added regularly.</p>
+                    <p>Ready-to-use toolbox talks covering the most common construction hazards — written in plain language your crew will actually engage with. New topics added regularly. Download, print, and go.</p>
                     <a href="#consultation" class="res-link">Request Access &nbsp;→</a>
                 </div>
             </div>
@@ -779,7 +689,7 @@
                     <div class="res-type">Construction &amp; Trades</div>
                 </div>
                 <div class="res-body">
-                    <p>Construction has one of the highest suicide rates of any industry. Free mental health awareness tools and support guides specifically for construction professionals and their families.</p>
+                    <p>Construction has one of the highest suicide rates of any industry. Free mental health awareness tools and support guides specifically for construction professionals and their families — because the whole worker matters.</p>
                     <a href="#consultation" class="res-link">Access Resources &nbsp;→</a>
                 </div>
             </div>
@@ -790,8 +700,60 @@
                     <div class="res-type">Regional Listings</div>
                 </div>
                 <div class="res-body">
-                    <p>A regularly updated list of free and low-cost safety training in your region — OSHA certifications, courses, and professional development opportunities, all in one place.</p>
+                    <p>A regularly updated directory of free and low-cost safety training in your region — OSHA certifications, awareness courses, and professional development, all in one place. No cost, no catch.</p>
                     <a href="#consultation" class="res-link">View Upcoming Classes &nbsp;→</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DOCUMENT PORTAL -->
+<section id="portal" class="portal-section">
+    <div class="portal-inner">
+        <div class="portal-grid">
+            <div class="portal-text">
+                <div class="portal-badge">Coming Soon</div>
+                <h2>The YSG Worker Document Portal</h2>
+                <p>Imagine a 6 AM project orientation. The PM forgot to request documents from HR, who doesn't arrive until 8. You're paying a journeyman welder to go home for the day — because the paperwork wasn't ready.</p>
+                <p>YSG is building the solution. A secure, cloud-based document management system where training certifications, drug screen results, and safety records live in one place — instantly accessible to the right people, at the right time.</p>
+
+                <div class="portal-scenario">
+                    <div class="portal-scenario-tag">How It Works</div>
+                    <p>Each worker's hard hat carries a QR code sticker. When they arrive on site, the General Contractor scans it and immediately sees their current training certifications and most recent drug screen result — no calls to HR, no delays, no excuses. Organizations you hire YSG to manage get secure, permission-based access to their folder.</p>
+                </div>
+                <a href="#consultation" class="portal-cta">Join the Early Access List &nbsp;→</a>
+                <p class="portal-note">Currently in development. Contact Dawn for early access and pilot program opportunities.</p>
+            </div>
+
+            <div class="portal-visual">
+                <div class="portal-card">
+                    <div class="portal-card-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+                    <div>
+                        <div class="portal-card-title">Instant Record Access</div>
+                        <div class="portal-card-desc">Training certs &amp; drug screen results on-demand. No waiting on HR, no phone calls, no delays at orientation.</div>
+                    </div>
+                </div>
+                <div class="portal-card">
+                    <div class="portal-card-ico"><svg viewBox="0 0 24 24"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><circle cx="12" cy="13" r="3"/></svg></div>
+                    <div>
+                        <div class="portal-card-title">QR Code Hard Hat Stickers</div>
+                        <div class="portal-card-desc">Each worker's credentials linked to a scannable QR on their hard hat. One scan = complete worker safety profile.</div>
+                    </div>
+                </div>
+                <div class="portal-card">
+                    <div class="portal-card-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <div>
+                        <div class="portal-card-title">Permission-Based Folder Access</div>
+                        <div class="portal-card-desc">Organizations get secure access only to their own folder. You control what's shared and who can see it.</div>
+                    </div>
+                </div>
+                <div class="portal-card">
+                    <div class="portal-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                    <div>
+                        <div class="portal-card-title">Drug-Free Workplace Integration</div>
+                        <div class="portal-card-desc">When YSG manages your drug-free workplace program, documentation flows directly into the portal — always current, always compliant.</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -817,14 +779,10 @@
             <div class="form-left">
                 <div class="eyebrow">Get Started</div>
                 <h2>Request Your Free Consultation</h2>
-                <p>Whether you're dealing with a compliance challenge, building a safety program from scratch, or not sure where to start — reach out. Dawn personally responds to every inquiry within one business day.</p>
+                <p>Whether you're dealing with a compliance challenge, building a safety program from scratch, or simply not sure where to start — reach out. Dawn personally responds to every inquiry within one business day.</p>
                 <div class="form-contact">
-                    <div class="form-contact-ico">
-                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    </div>
-                    <div class="form-contact-text">
-                        <a href="mailto:Dawn@yatessafetygroup.com">Dawn@yatessafetygroup.com</a>
-                    </div>
+                    <div class="form-contact-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                    <div class="form-contact-text"><a href="mailto:Dawn@yatessafetygroup.com">Dawn@yatessafetygroup.com</a></div>
                 </div>
                 <div class="badge-row">
                     <div class="badge"><div class="badge-dot"></div>WBENC Certified</div>
@@ -834,33 +792,39 @@
             </div>
             <div class="form-card">
                 <div class="form-card-h">Tell us about your needs</div>
-                <form onsubmit="handleForm(event)">
+                <div class="form-success" id="formSuccess">
+                    <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <h3>Message Sent!</h3>
+                    <p>Thank you for reaching out. Dawn will personally review your inquiry and respond within one business day.</p>
+                </div>
+                <form id="consultForm" onsubmit="handleForm(event)">
                     <div class="fg2">
-                        <div class="fld"><label>First Name</label><input type="text" placeholder="Jane" required></div>
-                        <div class="fld"><label>Last Name</label><input type="text" placeholder="Smith" required></div>
+                        <div class="fld"><label>First Name</label><input type="text" name="firstName" placeholder="Jane" required></div>
+                        <div class="fld"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" required></div>
                     </div>
-                    <div class="fld"><label>Company</label><input type="text" placeholder="ABC Construction" required></div>
+                    <div class="fld"><label>Company</label><input type="text" name="company" placeholder="ABC Construction" required></div>
                     <div class="fg2">
-                        <div class="fld"><label>Email</label><input type="email" placeholder="you@company.com" required></div>
-                        <div class="fld"><label>Phone</label><input type="tel" placeholder="(555) 000-0000"></div>
+                        <div class="fld"><label>Email</label><input type="email" name="email" placeholder="you@company.com" required></div>
+                        <div class="fld"><label>Phone</label><input type="tel" name="phone" placeholder="(555) 000-0000"></div>
                     </div>
                     <div class="fld">
                         <label>How Can YSG Help?</label>
-                        <select>
+                        <select name="service">
                             <option value="">Select a service area...</option>
                             <option>Safety Staffing &amp; Leadership</option>
                             <option>Safety Audits &amp; Inspections</option>
                             <option>OSHA Compliance &amp; Investigation</option>
                             <option>Risk Assessment &amp; Hazard Analysis</option>
                             <option>Training &amp; Program Development</option>
-                            <option>Safety Culture &amp; Leadership Coaching</option>
+                            <option>Drug-Free Workplace Management</option>
                             <option>Document Management &amp; Prequalification</option>
                             <option>Emergency Response &amp; OSHA Call-Out</option>
+                            <option>Document Portal — Early Access</option>
                             <option>Not sure — I'd like to talk it through</option>
                         </select>
                     </div>
-                    <div class="fld"><label>Tell Us More (Optional)</label><textarea placeholder="Brief description of your situation or needs..."></textarea></div>
-                    <button type="submit" class="form-submit">Send My Request &nbsp;→</button>
+                    <div class="fld"><label>Tell Us More (Optional)</label><textarea name="message" placeholder="Brief description of your situation or needs..."></textarea></div>
+                    <button type="submit" class="form-submit" id="submitBtn">Send My Request &nbsp;→</button>
                     <p class="form-note">Dawn personally reviews every inquiry.<br>Expect a response within one business day.</p>
                 </form>
             </div>
@@ -887,7 +851,7 @@
                 <li><a href="#services">OSHA Compliance</a></li>
                 <li><a href="#services">Risk Assessment</a></li>
                 <li><a href="#services">Training &amp; Programs</a></li>
-                <li><a href="#services">Safety Culture Coaching</a></li>
+                <li><a href="#services">Drug-Free Workplace</a></li>
                 <li><a href="#services">Document Management</a></li>
                 <li><a href="#services">Emergency Response</a></li>
             </ul>
@@ -895,41 +859,111 @@
         <div class="footer-col">
             <h4>Company</h4>
             <ul>
-                <li><a href="#why">Why YSG</a></li>
+                <li><a href="#why">Our Story</a></li>
+                <li><a href="#why-mission">Our Mission</a></li>
+                <li><a href="#mental-health">Mental Health</a></li>
                 <li><a href="#resources">Resource Center</a></li>
+                <li><a href="#portal">Document Portal</a></li>
                 <li><a href="#consultation">Free Consultation</a></li>
-                <li><a href="mailto:Dawn@yatessafetygroup.com">Contact Dawn</a></li>
             </ul>
         </div>
         <div class="footer-col">
             <h4>Credentials</h4>
             <ul>
-                <li><a href="#">WBENC Certified</a></li>
-                <li><a href="#">ACI Member</a></li>
-                <li><a href="#">OSHA Compliance</a></li>
-                <li><a href="#">22+ Years Field Experience</a></li>
-                <li><a href="#">Women-Owned Business</a></li>
+                <li><a href="http://www.wbenclink.org/" target="_blank" rel="noopener">WBENC Certified</a></li>
+                <li><a href="https://aci-web.com/" target="_blank" rel="noopener">ACI Member</a></li>
+                <li><a href="#services">OSHA Compliance</a></li>
+                <li><a href="#why">22+ Years Field Experience</a></li>
+                <li><a href="#why">Women-Owned Business</a></li>
             </ul>
         </div>
     </div>
     <div class="footer-bottom">
-        <span>&copy; 2026 Yates Safety Group. All rights reserved.</span>
+        <span>&copy; 2026 Yates Safety Group. All rights reserved. &nbsp;·&nbsp; <span class="footer-red">Your cornerstone of safety.</span></span>
         <span>WBENC Certified &nbsp;·&nbsp; Allied Construction Industries Member</span>
     </div>
 </footer>
 
 <script>
-function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
-function closeNav()  { document.getElementById('navLinks').classList.remove('open'); }
-function handleForm(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = '✓ Sent — Dawn will be in touch shortly';
-    btn.style.background = '#1a5c38';
-    btn.disabled = true;
-    e.target.reset();
-    setTimeout(() => { btn.textContent = 'Send My Request →'; btn.style.background = ''; btn.disabled = false; }, 5000);
-}
+    /* ── Mobile nav ── */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    function closeMobile() { navLinks.classList.remove('open'); }
+
+    /* ── Dropdown menus ── */
+    function toggleDD(id, e) {
+        const isMobile = window.innerWidth <= 640;
+        if (!isMobile) return; // desktop uses CSS :hover
+        e.preventDefault();
+        const li = document.getElementById(id);
+        li.classList.toggle('open');
+    }
+    // Close dropdowns on outside click (desktop)
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dropdown')) {
+            document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+        }
+    });
+
+    /* ── Consultation form ── */
+    async function handleForm(e) {
+        e.preventDefault();
+        const btn  = document.getElementById('submitBtn');
+        const form = document.getElementById('consultForm');
+        const successEl = document.getElementById('formSuccess');
+
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+
+        // Collect form data
+        const data = new FormData(form);
+        const body = Object.fromEntries(data.entries());
+
+        // Use mailto as fallback (replace with Formspree endpoint when ready)
+        // To enable real email submissions: sign up at formspree.io, get your form ID,
+        // and replace the fetch URL with https://formspree.io/f/YOUR_FORM_ID
+        const FORMSPREE_ID = 'REPLACE_ME';
+
+        if (FORMSPREE_ID !== 'REPLACE_ME') {
+            try {
+                const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body)
+                });
+                if (res.ok) {
+                    showSuccess(form, successEl);
+                } else {
+                    throw new Error('Form error');
+                }
+            } catch {
+                btn.textContent = 'Send My Request →';
+                btn.disabled = false;
+                alert('There was an issue sending your request. Please email Dawn directly at Dawn@yatessafetygroup.com');
+            }
+        } else {
+            // Fallback: simulate success (for demo / before Formspree is wired up)
+            setTimeout(() => showSuccess(form, successEl), 800);
+        }
+    }
+
+    function showSuccess(form, successEl) {
+        form.style.display = 'none';
+        successEl.style.display = 'block';
+    }
+
+    /* ── Smooth active nav highlight ── */
+    const sections = document.querySelectorAll('section[id], div[id]');
+    const navItems = document.querySelectorAll('.nav-links > li > a[href^="#"]');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navItems.forEach(a => a.style.color = '');
+            }
+        });
+    }, { threshold: 0.4 });
+    sections.forEach(s => observer.observe(s));
 </script>
 </body>
 </html>
